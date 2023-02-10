@@ -7,13 +7,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Set Slack
-      run: |
-        if [[ ${{ inputs.property_group }} == 'product' ]]; then
-            echo "SLACK_URL=https://hooks.slack.com/workflows/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" >> "$GITHUB_ENV"
-        else
-            echo "SLACK_URL=https://hooks.slack.com/workflows/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" >> "$GITHUB_ENV"
-        fi
     - name: Send Deploy Start
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
@@ -28,4 +21,4 @@ runs:
             "status": "Deploying"
           }
       env:  
-        SLACK_WEBHOOK_URL: ${{ env.SLACK_URL }}
+        SLACK_WEBHOOK_URL: "${{ inputs.property_group == 'product' && 'https://hooks.slack.com/workflows/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' || 'https://hooks.slack.com/workflows/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' }}" ${{ env.SLACK_URL }}
