@@ -21,7 +21,7 @@ runs:
             "release_body": ${{ toJSON(github.event.release.body) }},
             "author": "${{ github.event.release.author.login }}",
             "action_link": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-            "status": "${{ inputs.succeeded == true && 'SUCCESS' || 'FAILURE' }}"
+            "status": "${{ inputs.succeeded == "true" && 'SUCCESS' || 'FAILURE' }}"
           }
       env:  
         SLACK_WEBHOOK_URL: "${{ inputs.property_group == 'product' && 'https://hooks.slack.com/workflows/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' || 'https://hooks.slack.com/workflows/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' }}"
