@@ -21,4 +21,4 @@ runs:
             "status": "Deploying"
           }
       env:  
-        SLACK_WEBHOOK_URL: "${{ contains(inputs.property_group, 'product') && 'https://hooks.slack.com/workflows/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' || 'https://hooks.slack.com/workflows/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' }}"
+        SLACK_WEBHOOK_URL: "${{ inputs.property_group == 'product' && 'https://hooks.slack.com/workflows/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' || 'https://hooks.slack.com/workflows/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' }}"
