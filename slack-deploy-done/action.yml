@@ -8,7 +8,7 @@ runs:
   using: "composite"
   steps:
     - name: Send Deploy Success
-      if: success()
+      if: !(failure() || cancelled())
       uses: slackapi/slack-github-action@v1.23.0
       with:
         payload: |
