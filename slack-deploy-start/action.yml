@@ -1,0 +1,24 @@
+name: 'Deplooy Start'
+description: 'Deploy Start on Slack'
+inputs:
+  property_group:  
+    description: 'Who to ask. [product, platform]'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Send Deploy Start
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+        payload: |
+          {
+            "repository": "${{ github.event.repository.name }}",
+            "version": "${{ github.event.release.tag_name }}",
+            "release_body": ${{ toJSON(github.event.release.body) }},
+            "author": "${{ github.event.release.author.login }}",
+            "action_link": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "status": "Deploying"
+          }
+      env:  
+        SLACK_WEBHOOK_URL: "${{ contains(inputs.property_group, 'product') && 'https://hooks.slack.com/workflows/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' || 'https://hooks.slack.com/workflows/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' }}"
