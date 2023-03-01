@@ -6,13 +6,13 @@ This action will notify a Slack channel on specific deployment actions.
 
 ### Inputs
 
-* `slack-api-token` - **Required** The Slack API token.
-* `channel` - **Required** The channel to send the message.
-* `mention_person` - **Optional** The user to mention in the message.
-* `status` - **Optional** The status of the run. Can be `start`, `done`, or `request`. Default is `start`.
+- `slack-api-token` - **Required** The Slack API token.
+- `channel` - **Required** The channel to send the message.
+- `mention_person` - **Optional** The user to mention in the message.
+- `status` - **Optional** The status of the run. Can be `start`, `done`, or
+  `request`. Default is `start`.
 
 ### Example usage
-
 
 ```yaml
 name: Product Deploy
@@ -31,7 +31,7 @@ jobs:
       with:
         slack-api-token: ${{ secrets.API_TOKEN }}
         channel: ${{ vars.APPROVALS_CHANNEL }}
-        mention_person: ${{ vars.APPROVER }}
+        mention-person: ${{ vars.APPROVER }}
         status: 'request'
     - name: Start Deploy Message
       uses: Basis-Theory/github-actions/deploy-slack-action@master
@@ -56,16 +56,18 @@ This action sends a message to a Slack channel.
 
 ### Inputs
 
-* `slack-api-token` - **Required** The Slack API token.
-* `channel` - **Required** The channel to send the message.
-* `text` - **Optional** The text of the message.
-* `blocks` - **Optional** The [blocks](https://app.slack.com/block-kit-builder/) of the message.
-* `update-message-id` - **Optional** The message ID to update.
-* `thread-message-id` - **Optional** The message ID to add the message to a thread.
+- `slack-api-token` - **Required** The Slack API token.
+- `channel` - **Required** The channel to send the message.
+- `text` - **Optional** The text of the message.
+- `blocks` - **Optional** The [blocks](https://app.slack.com/block-kit-builder/)
+  of the message.
+- `update-message-id` - **Optional** The message ID to update.
+- `thread-message-id` - **Optional** The message ID to add the message to a
+  thread.
 
 ### Outputs
 
-* `message_id` - The message Id of the sent message
+- `message_id` - The message Id of the sent message
 
 ### Example
 
