@@ -1,0 +1,15 @@
+node_modules
+.idea
+.env
+.env.local
+.parcel-cache
+**/*.log
+cypress/screenshots
+cypress/video
+.vscode
+cypress.env.json
+.DS_Store
+
+# Ignore built ts files
+__tests__/runner/*
+lib/**/*

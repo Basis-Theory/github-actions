@@ -1,0 +1,23 @@
+name: "Hello World"
+description: "Greet someone and record the time"
+inputs:
+  slack-api-token:
+    description: "API token for Slack"
+    required: true
+  github:
+    description: "Github"
+    required: true
+  status:
+    description: "Status of run [start, done, request]"
+    default: "start"
+  channel:
+    description: "Channel to send message"
+    required: true
+  mention-person:
+    description: "User to mention in message"
+outputs:
+  message_id:
+    description: 'id of the message'
+runs:
+  using: "node16"
+  main: "dist/index.js"

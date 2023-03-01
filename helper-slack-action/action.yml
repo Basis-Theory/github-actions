@@ -1,0 +1,20 @@
+name: "Deploy Slack Action"
+description: "Send messages to a slack channel depending on the status of the run"
+inputs:
+  slack-api-token:
+    description: "API token for Slack"
+    required: true
+  github:
+    description: "Github"
+    required: true
+  channel:
+    description: "Channel to send message"
+    required: true
+  mention-person:
+    description: "User to mention in message"
+  status:
+    description: "Status of run [start, done, request]"
+    default: "start"
+runs:
+  using: "node16"
+  main: "../slack-javascript-action/dist/deploy/index.js"
