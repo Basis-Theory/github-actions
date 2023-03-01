@@ -76,7 +76,7 @@ const getDateTime = (): string => {
     timeZoneName: "short",
   })
     .format(new Date())
-    .replace(" ", "\u202F");
+    .replace(/\u202F/g, " ");
 };
 
 const getStartedTimestamp = (): string => {

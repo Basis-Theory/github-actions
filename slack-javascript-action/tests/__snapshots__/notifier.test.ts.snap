@@ -36,7 +36,7 @@ Object {
 
 exports[`build cancelled happy path request, start, cancelled 2`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -138,7 +138,7 @@ Object {
 
 exports[`build cancelled happy path request, start, cancelled 5`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"ts\\":\\"created message id\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":octagonal_sign: Deploy Cancelled\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"ts\\":\\"created message id\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":octagonal_sign: Deploy Cancelled\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -174,7 +174,7 @@ exports[`build cancelled happy path request, start, cancelled 6`] = `"updated me
 
 exports[`build cancelled send new message cancelled message if nothing to update on finish 1`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":octagonal_sign: Deploy Cancelled\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":octagonal_sign: Deploy Cancelled\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -244,7 +244,7 @@ Object {
 
 exports[`build success happy path request, start, success 2`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -346,7 +346,7 @@ Object {
 
 exports[`build success happy path request, start, success 5`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"ts\\":\\"created message id\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":white_check_mark: Deploy Success\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"ts\\":\\"created message id\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":white_check_mark: Deploy Success\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -382,7 +382,7 @@ exports[`build success happy path request, start, success 6`] = `"updated messag
 
 exports[`build success send new message if nothing to update on finish 1`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":white_check_mark: Deploy Success\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":white_check_mark: Deploy Success\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -454,7 +454,7 @@ exports[`build success send request for approval 2`] = `"created message id"`;
 
 exports[`build success start deploy with no request 1`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -568,7 +568,7 @@ Object {
 
 exports[`build success start deploy with request 2`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":rocket: Deploy Started\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` \\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],
@@ -682,7 +682,7 @@ Object {
 
 exports[`failed build send new message when none exists 1`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":no_entry_sign: Deploy Failure\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"header\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\":no_entry_sign: Deploy Failure\\"}},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"context\\",\\"elements\\":[{\\"text\\":\\"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`\\",\\"type\\":\\"mrkdwn\\"}]},{\\"type\\":\\"actions\\",\\"elements\\":[{\\"type\\":\\"button\\",\\"text\\":{\\"type\\":\\"plain_text\\",\\"text\\":\\"Open Action  :github:\\",\\"emoji\\":true},\\"url\\":\\"http://test-repo.com/testing/actions/runs/12\\"}]},{\\"type\\":\\"divider\\"}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],

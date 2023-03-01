@@ -451,7 +451,7 @@ const getDateTime = () => {
         timeZoneName: "short",
     })
         .format(new Date())
-        .replace(" ", "\u202F");
+        .replace(/\u202F/g, " ");
 };
 const getStartedTimestamp = () => {
     if (process.env.STARTED_TIMESTAMP) {

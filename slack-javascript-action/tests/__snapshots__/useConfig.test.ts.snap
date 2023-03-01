@@ -10,9 +10,9 @@ Object {
   "message_id": "1234567890",
   "release_notes": "notes!",
   "repository": "test-repo",
-  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
-  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "version": "v42.0.0",
 }
 `;
@@ -27,9 +27,9 @@ Object {
   "message_id": "1234567890",
   "release_notes": "no release notes",
   "repository": "test-repo",
-  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
-  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "version": "123456",
 }
 `;
@@ -44,9 +44,9 @@ Object {
   "message_id": "1234567890",
   "release_notes": "test commit 1*test commit 2",
   "repository": "test-repo",
-  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
-  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "version": "123456",
 }
 `;
