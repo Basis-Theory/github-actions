@@ -47,9 +47,11 @@ const slack_client_1 = __nccwpck_require__(7744);
 const useBlocks_1 = __importDefault(__nccwpck_require__(8613));
 const fs_1 = __importDefault(__nccwpck_require__(5747));
 const artifact = __importStar(__nccwpck_require__(2605));
+const deploy_helpers_1 = __nccwpck_require__(321);
 const FILE_NAME = "release-message-information.config";
 const askForApproval = (config) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getApprovalMessage(config));
+    const releaseNotes = yield (0, deploy_helpers_1.threadReleaseNotes)(Object.assign(Object.assign({}, config), { message_id: message.ts }));
     fs_1.default.writeFileSync("./release-message-information.config", JSON.stringify({
         channel: config.channel,
         message_id: message.ts,
@@ -436,7 +438,7 @@ const getReleaseNotes = (githubContext) => {
     }
     return "no release notes";
 };
-const getAuthor = (githubContext) => githubContext.event.release
+const getAuthor = (githubContext) => githubContext.event.release && !githubContext.event.release.author.login.includes("github-actions")
     ? githubContext.event.release.author.login
     : githubContext.actor;
 const getDateTime = () => {

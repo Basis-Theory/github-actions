@@ -82,6 +82,21 @@ describe("no release", () => {
   });
 });
 
+describe("release created by github", () => {
+  beforeEach(() => {
+    const localMockData = { ...githubData };
+    if (localMockData.event.release) {
+      localMockData.event.release.author.login = "github-actions[bot]";
+    }
+
+    mockGetInput({ ...coreData, github: JSON.stringify(localMockData) });
+  });
+
+  test("should return the expected config", () => {
+    expect(useConfig()).toMatchSnapshot();
+  });
+});
+
 describe("no release or commit", () => {
   beforeEach(() => {
     const localMockData = { ...githubData };

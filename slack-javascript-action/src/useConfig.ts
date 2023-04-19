@@ -60,7 +60,8 @@ const getReleaseNotes = (githubContext: GithubContextType): string => {
 };
 
 const getAuthor = (githubContext: GithubContextType): string =>
-  githubContext.event.release
+  githubContext.event.release &&
+  !githubContext.event.release.author.login.includes("github-actions")
     ? githubContext.event.release.author.login
     : githubContext.actor;
 

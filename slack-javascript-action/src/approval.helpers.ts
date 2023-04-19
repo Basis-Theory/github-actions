@@ -3,6 +3,7 @@ import useBlocks from "./useBlocks";
 import { ConfigType } from "./useConfig";
 import fs from "fs";
 import * as artifact from "@actions/artifact";
+import { threadReleaseNotes } from "./deploy.helpers";
 
 const FILE_NAME = "release-message-information.config";
 
@@ -11,6 +12,10 @@ const askForApproval = async (config: ConfigType) => {
     config.channel,
     useBlocks().getApprovalMessage(config)
   );
+  const releaseNotes = await threadReleaseNotes({
+    ...config,
+    message_id: message.ts,
+  });
 
   fs.writeFileSync(
     "./release-message-information.config",
