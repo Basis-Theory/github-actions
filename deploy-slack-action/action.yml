@@ -17,16 +17,16 @@ runs:
   steps:
     - name: job-status
       shell: bash
-      if: success()
-      run: echo "job_status=success" >> $GITHUB_ENV
+      if: ${{ success() }}
+      run: echo "final_status=success" >> $GITHUB_ENV
     - name: job-status
       shell: bash
-      if: failure()
-      run: echo "job_status=failure" >> $GITHUB_ENV
+      if: ${{ failure() }}
+      run: echo "final_status=failure" >> $GITHUB_ENV
     - name: job-status
       shell: bash
-      if: cancelled()
-      run: echo "job_status=cancelled" >> $GITHUB_ENV
+      if: ${{ cancelled() }}
+      run: echo "final_status=cancelled" >> $GITHUB_ENV
     - name: Notify
       uses: Basis-Theory/github-actions/helper-slack-action@master
       with:
