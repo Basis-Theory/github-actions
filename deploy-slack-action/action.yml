@@ -18,14 +18,13 @@ runs:
     - name: job-status
       shell: bash
       run: |
-      if [ "${{ job.status }}" = "cancelled" ]; then
-        echo "job_status=cancelled" >> $GITHUB_ENV
-      elif [ "${{ job.status }}" = "failure" ]; then
-        echo "job_status=failure" >> $GITHUB_ENV
-      else
-        echo "job_status=success" >> $GITHUB_ENV
-      fi
-    
+        if [ "${{ job.status }}" = "cancelled" ]; then
+          echo "job_status=cancelled" >> $GITHUB_ENV
+        elif [ "${{ job.status }}" = "failure" ]; then
+          echo "job_status=failure" >> $GITHUB_ENV
+        else
+          echo "job_status=success" >> $GITHUB_ENV
+        fi
     - name: Notify
       uses: Basis-Theory/github-actions/helper-slack-action@master
       with:
