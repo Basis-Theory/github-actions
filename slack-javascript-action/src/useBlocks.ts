@@ -93,53 +93,15 @@ const getApprovalMessage = (
 };
 
 const getFailedMention = (
-  { repository, version, author, action_url, mention_person }: ConfigType,
-  release_message: SlackMessage | undefined = undefined,
-  completed: boolean = false
+  { mention_person }: ConfigType
 ): any => {
-  let header_text = `${completed ? ":approved: ~" : ""}*Approval Requested`;
-  header_text += mention_person ? ` from <${mention_person}>*` : "*";
-  header_text += completed ? `~` : "";
-
   return [
     {
       type: "section",
       text: {
         type: "mrkdwn",
-        text: header_text,
+        text: `<@U01GRDZ7XJ6>`,
       },
-    },
-    {
-      type: "context",
-      elements: [
-        {
-          text: `${
-            completed ? "~" : ""
-          }:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${
-            completed ? "~" : ""
-          }`,
-          type: "mrkdwn",
-        },
-      ],
-    },
-    {
-      type: "actions",
-      elements: [
-        {
-          type: "button",
-          text: {
-            type: "plain_text",
-            text: completed ? "Open Deploy :slack:" : "Open Action :github:",
-            emoji: true,
-          },
-          url: completed
-            ? `https://basistheory.slack.com/archives/${release_message?.channel}/${release_message?.ts}`
-            : action_url,
-        },
-      ],
-    },
-    {
-      type: "divider",
     },
   ];
 };
@@ -206,6 +168,7 @@ const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
   getDeployMessage,
+  getFailedMention
 });
 
 export default useBlocks;

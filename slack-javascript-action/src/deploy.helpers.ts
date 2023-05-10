@@ -38,7 +38,7 @@ const alertDeployDone = async (config: ConfigType) => {
   }
 
   if (job_status === "failure") {
-    await sendMessage(config.channel, undefined, `<@U01GRDZ7XJ6>`, message.ts);
+    await sendMessage(config.channel, useBlocks().getFailedMention(config), undefined, message_id);
   }
 
   return message.ts;
