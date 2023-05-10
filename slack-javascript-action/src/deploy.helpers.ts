@@ -18,7 +18,7 @@ const getDoneHeading = (job_status: string | undefined) => {
   if (job_status === "success") {
     return `:white_check_mark: Deploy Success`;
   } else if (job_status === "failure") {
-    return `:no_entry_sign: Deploy Failure`;
+    return `:no_entry_sign: Deploy Failure HERE`;
   }
   return `:octagonal_sign: Deploy Cancelled`;
 };
@@ -41,8 +41,8 @@ const alertDeployDone = async (config: ConfigType) => {
   await sendMessage(
     config.channel,
     useBlocks().getFailedMention(config),
-    undefined,
-    message_id
+    "",
+    message.ts
   );
   // }
 
