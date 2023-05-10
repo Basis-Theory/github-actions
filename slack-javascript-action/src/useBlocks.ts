@@ -93,7 +93,7 @@ const getApprovalMessage = (
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {
-  const mention = mention_person ? mention_person : "@U01GRDZ7XJ6";
+  const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
   return [
     {
       type: "section",

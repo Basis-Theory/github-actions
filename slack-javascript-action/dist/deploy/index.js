@@ -367,7 +367,7 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
     ];
 };
 const getFailedMention = ({ mention_person }) => {
-    const mention = mention_person ? mention_person : "@U01GRDZ7XJ6";
+    const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
     return [
         {
             type: "section",
