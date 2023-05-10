@@ -852,7 +852,7 @@ Object {
 
 exports[`failed build send new message when none exists 2`] = `
 Object {
-  "data": "{\\"channel\\":\\"C1234567890\\",\\"text\\":\\"<drewsue>\\",\\"thread_ts\\":\\"created message id\\"}",
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"text\\":\\"<@U01GRDZ7XJ6>\\",\\"thread_ts\\":\\"created message id\\"}",
   "env": Object {
     "Blob": [Function],
     "FormData": [Function],

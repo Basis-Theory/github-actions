@@ -37,8 +37,13 @@ const alertDeployDone = async (config: ConfigType) => {
     message = await sendMessage(config.channel, deployMessage);
   }
 
-  if(job_status === "failure" && mention_person) {
-    await sendMessage(config.channel, undefined, `<${mention_person}>`, message.ts);
+  if (job_status === "failure") {
+    await sendMessage(
+      config.channel,
+      undefined,
+      `<@U01GRDZ7XJ6>`,
+      message.ts
+    );
   }
 
   return message.ts;

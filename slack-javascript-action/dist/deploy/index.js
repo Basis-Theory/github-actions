@@ -149,7 +149,7 @@ const getDoneHeading = (job_status) => {
     return `:octagonal_sign: Deploy Cancelled`;
 };
 const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* () {
-    const { message_id, job_status } = config;
+    const { message_id, job_status, mention_person } = config;
     let deployMessage = (0, useBlocks_1.default)().getDeployMessage(getDoneHeading(job_status), config);
     let message;
     if (message_id) {
@@ -157,6 +157,9 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
     }
     else {
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
+    }
+    if (job_status === "failure" && mention_person) {
+        yield (0, slack_client_1.sendMessage)(config.channel, undefined, `<${mention_person}>`, message.ts);
     }
     return message.ts;
 });
@@ -322,6 +325,48 @@ const releaseNotesToBlocks = (release_notes) => {
     ];
 };
 const getApprovalMessage = ({ repository, version, author, action_url, mention_person }, release_message = undefined, completed = false) => {
+    let header_text = `${completed ? ":approved: ~" : ""}*Approval Requested`;
+    header_text += mention_person ? ` from <${mention_person}>*` : "*";
+    header_text += completed ? `~` : "";
+    return [
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: header_text,
+            },
+        },
+        {
+            type: "context",
+            elements: [
+                {
+                    text: `${completed ? "~" : ""}:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${completed ? "~" : ""}`,
+                    type: "mrkdwn",
+                },
+            ],
+        },
+        {
+            type: "actions",
+            elements: [
+                {
+                    type: "button",
+                    text: {
+                        type: "plain_text",
+                        text: completed ? "Open Deploy :slack:" : "Open Action :github:",
+                        emoji: true,
+                    },
+                    url: completed
+                        ? `https://basistheory.slack.com/archives/${release_message === null || release_message === void 0 ? void 0 : release_message.channel}/${release_message === null || release_message === void 0 ? void 0 : release_message.ts}`
+                        : action_url,
+                },
+            ],
+        },
+        {
+            type: "divider",
+        },
+    ];
+};
+const getFailedMention = ({ repository, version, author, action_url, mention_person }, release_message = undefined, completed = false) => {
     let header_text = `${completed ? ":approved: ~" : ""}*Approval Requested`;
     header_text += mention_person ? ` from <${mention_person}>*` : "*";
     header_text += completed ? `~` : "";
