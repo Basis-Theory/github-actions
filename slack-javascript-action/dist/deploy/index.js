@@ -425,7 +425,7 @@ const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
     getDeployMessage,
-    getFailedMention
+    getFailedMention,
 });
 exports.default = useBlocks;
 
