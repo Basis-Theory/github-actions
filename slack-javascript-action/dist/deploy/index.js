@@ -144,7 +144,7 @@ const getDoneHeading = (job_status) => {
         return `:white_check_mark: Deploy Success`;
     }
     else if (job_status === "failure") {
-        return `:no_entry_sign: Deploy Failure HERE`;
+        return `:no_entry_sign: Deploy Failure`;
     }
     return `:octagonal_sign: Deploy Cancelled`;
 };
@@ -158,9 +158,9 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
     else {
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
     }
-    // if (job_status === "failure") {
-    yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), "", message.ts);
-    // }
+    if (job_status === "failure") {
+        yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), "", message.ts);
+    }
     return message.ts;
 });
 exports.alertDeployDone = alertDeployDone;
@@ -367,12 +367,13 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
     ];
 };
 const getFailedMention = ({ mention_person }) => {
+    const mention = mention_person ? mention_person : "@U01GRDZ7XJ6";
     return [
         {
             type: "section",
             text: {
                 type: "mrkdwn",
-                text: `<@U01GRDZ7XJ6>`,
+                text: `<${mention}>`,
             },
         },
     ];
