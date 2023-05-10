@@ -158,8 +158,8 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
     else {
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
     }
-    if (job_status === "failure" && mention_person) {
-        yield (0, slack_client_1.sendMessage)(config.channel, undefined, `<${mention_person}>`, message.ts);
+    if (job_status === "failure") {
+        yield (0, slack_client_1.sendMessage)(config.channel, undefined, `<@U01GRDZ7XJ6>`, message.ts);
     }
     return message.ts;
 });
