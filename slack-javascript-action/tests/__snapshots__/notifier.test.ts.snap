@@ -204,7 +204,41 @@ Object {
 }
 `;
 
-exports[`build cancelled happy path request, start, cancelled 7`] = `"updated message id"`;
+exports[`build cancelled happy path request, start, cancelled 7`] = `
+Object {
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"section\\",\\"text\\":{\\"type\\":\\"mrkdwn\\",\\"text\\":\\"<@U01GRDZ7XJ6>\\"}}],\\"text\\":\\"\\",\\"thread_ts\\":\\"created message id\\"}",
+  "env": Object {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": Object {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": Array [
+    [Function],
+  ],
+  "transformResponse": Array [
+    [Function],
+  ],
+  "transitional": Object {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelled 8`] = `"updated message id"`;
 
 exports[`build cancelled send new message cancelled message if nothing to update on finish 1`] = `
 Object {
@@ -240,7 +274,41 @@ Object {
 }
 `;
 
-exports[`build cancelled send new message cancelled message if nothing to update on finish 2`] = `"created message id"`;
+exports[`build cancelled send new message cancelled message if nothing to update on finish 2`] = `
+Object {
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"section\\",\\"text\\":{\\"type\\":\\"mrkdwn\\",\\"text\\":\\"<@U01GRDZ7XJ6>\\"}}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "env": Object {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": Object {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": Array [
+    [Function],
+  ],
+  "transformResponse": Array [
+    [Function],
+  ],
+  "transitional": Object {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled send new message cancelled message if nothing to update on finish 3`] = `"created message id"`;
 
 exports[`build success happy path request, start, success 1`] = `
 Object {
@@ -446,7 +514,41 @@ Object {
 }
 `;
 
-exports[`build success happy path request, start, success 7`] = `"updated message id"`;
+exports[`build success happy path request, start, success 7`] = `
+Object {
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"section\\",\\"text\\":{\\"type\\":\\"mrkdwn\\",\\"text\\":\\"<@U01GRDZ7XJ6>\\"}}],\\"text\\":\\"\\",\\"thread_ts\\":\\"created message id\\"}",
+  "env": Object {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": Object {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": Array [
+    [Function],
+  ],
+  "transformResponse": Array [
+    [Function],
+  ],
+  "transitional": Object {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, success 8`] = `"updated message id"`;
 
 exports[`build success send new message if nothing to update on finish 1`] = `
 Object {
@@ -482,7 +584,41 @@ Object {
 }
 `;
 
-exports[`build success send new message if nothing to update on finish 2`] = `"created message id"`;
+exports[`build success send new message if nothing to update on finish 2`] = `
+Object {
+  "data": "{\\"channel\\":\\"C1234567890\\",\\"blocks\\":[{\\"type\\":\\"section\\",\\"text\\":{\\"type\\":\\"mrkdwn\\",\\"text\\":\\"<@U01GRDZ7XJ6>\\"}}],\\"text\\":\\"\\",\\"thread_ts\\":\\"\\"}",
+  "env": Object {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": Object {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": Array [
+    [Function],
+  ],
+  "transformResponse": Array [
+    [Function],
+  ],
+  "transitional": Object {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success send new message if nothing to update on finish 3`] = `"created message id"`;
 
 exports[`build success send request for approval 1`] = `
 Object {
