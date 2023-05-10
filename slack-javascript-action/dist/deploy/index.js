@@ -144,7 +144,7 @@ const getDoneHeading = (job_status) => {
         return `:white_check_mark: Deploy Success`;
     }
     else if (job_status === "failure") {
-        return `:no_entry_sign: Deploy Failure`;
+        return `:no_entry_sign: Deploy Failure HERE`;
     }
     return `:octagonal_sign: Deploy Cancelled`;
 };
@@ -159,7 +159,7 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
     }
     // if (job_status === "failure") {
-    yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), undefined, message_id);
+    yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), "", message.ts);
     // }
     return message.ts;
 });
