@@ -92,9 +92,7 @@ const getApprovalMessage = (
   ];
 };
 
-const getFailedMention = (
-  { mention_person }: ConfigType
-): any => {
+const getFailedMention = ({ mention_person }: ConfigType): any => {
   return [
     {
       type: "section",
@@ -168,7 +166,7 @@ const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
   getDeployMessage,
-  getFailedMention
+  getFailedMention,
 });
 
 export default useBlocks;

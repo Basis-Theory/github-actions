@@ -159,7 +159,7 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
     }
     if (job_status === "failure") {
-        yield (0, slack_client_1.sendMessage)(config.channel, undefined, `<@U01GRDZ7XJ6>`, message.ts);
+        yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), undefined, message_id);
     }
     return message.ts;
 });
@@ -366,45 +366,14 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
         },
     ];
 };
-const getFailedMention = ({ repository, version, author, action_url, mention_person }, release_message = undefined, completed = false) => {
-    let header_text = `${completed ? ":approved: ~" : ""}*Approval Requested`;
-    header_text += mention_person ? ` from <${mention_person}>*` : "*";
-    header_text += completed ? `~` : "";
+const getFailedMention = ({ mention_person }) => {
     return [
         {
             type: "section",
             text: {
                 type: "mrkdwn",
-                text: header_text,
+                text: `<@U01GRDZ7XJ6>`,
             },
-        },
-        {
-            type: "context",
-            elements: [
-                {
-                    text: `${completed ? "~" : ""}:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${completed ? "~" : ""}`,
-                    type: "mrkdwn",
-                },
-            ],
-        },
-        {
-            type: "actions",
-            elements: [
-                {
-                    type: "button",
-                    text: {
-                        type: "plain_text",
-                        text: completed ? "Open Deploy :slack:" : "Open Action :github:",
-                        emoji: true,
-                    },
-                    url: completed
-                        ? `https://basistheory.slack.com/archives/${release_message === null || release_message === void 0 ? void 0 : release_message.channel}/${release_message === null || release_message === void 0 ? void 0 : release_message.ts}`
-                        : action_url,
-                },
-            ],
-        },
-        {
-            type: "divider",
         },
     ];
 };
@@ -456,6 +425,7 @@ const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
     getDeployMessage,
+    getFailedMention
 });
 exports.default = useBlocks;
 
