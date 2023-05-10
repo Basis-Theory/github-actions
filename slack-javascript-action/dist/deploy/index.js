@@ -149,7 +149,7 @@ const getDoneHeading = (job_status) => {
     return `:octagonal_sign: Deploy Cancelled`;
 };
 const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* () {
-    const { message_id, job_status } = config;
+    const { message_id, job_status, mention_person } = config;
     let deployMessage = (0, useBlocks_1.default)().getDeployMessage(getDoneHeading(job_status), config);
     let message;
     if (message_id) {
@@ -157,6 +157,9 @@ const alertDeployDone = (config) => __awaiter(void 0, void 0, void 0, function* 
     }
     else {
         message = yield (0, slack_client_1.sendMessage)(config.channel, deployMessage);
+    }
+    if (job_status === "failure") {
+        yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getFailedMention(config), "", message.ts);
     }
     return message.ts;
 });
@@ -363,6 +366,18 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
         },
     ];
 };
+const getFailedMention = ({ mention_person }) => {
+    const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
+    return [
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: `<${mention}>`,
+            },
+        },
+    ];
+};
 const getDeployMessage = (heading, { repository, version, author, action_url, status, startedTimestamp, stoppedTimestamp, }) => [
     {
         type: "header",
@@ -411,6 +426,7 @@ const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
     getDeployMessage,
+    getFailedMention,
 });
 exports.default = useBlocks;
 

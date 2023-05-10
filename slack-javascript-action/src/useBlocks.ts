@@ -92,6 +92,19 @@ const getApprovalMessage = (
   ];
 };
 
+const getFailedMention = ({ mention_person }: ConfigType): any => {
+  const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
+  return [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `<${mention}>`,
+      },
+    },
+  ];
+};
+
 const getDeployMessage = (
   heading: string,
   {
@@ -154,6 +167,7 @@ const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
   getDeployMessage,
+  getFailedMention,
 });
 
 export default useBlocks;
