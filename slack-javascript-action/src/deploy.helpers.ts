@@ -24,7 +24,7 @@ const getDoneHeading = (job_status: string | undefined) => {
 };
 
 const alertDeployDone = async (config: ConfigType) => {
-  const { message_id, job_status }: ConfigType = config;
+  const { message_id, job_status, mention_person }: ConfigType = config;
   let deployMessage = useBlocks().getDeployMessage(
     getDoneHeading(job_status),
     config
@@ -35,6 +35,10 @@ const alertDeployDone = async (config: ConfigType) => {
     message = await updateMessage(config.channel, message_id, deployMessage);
   } else {
     message = await sendMessage(config.channel, deployMessage);
+  }
+
+  if(job_status === "failure" && mention_person) {
+    await sendMessage(config.channel, undefined, `<${mention_person}>`, message.ts);
   }
 
   return message.ts;
