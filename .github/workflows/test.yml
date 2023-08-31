@@ -28,8 +28,7 @@ jobs:
         id: ip
         uses: ./public-ip
   
-      - name: Debug
-        run: echo "test"
+      - run: echo "test"
 
       - name: Assert Public IP Not Empty
         if: "${{ steps.ip.outputs.ipv4 }}" == ""
