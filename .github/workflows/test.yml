@@ -28,10 +28,6 @@ jobs:
         id: ip
         uses: ./public-ip
 
-      - name: Public IP
-        run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-
       - name: Assert Public IP Not Empty
         if: ${{ steps.ip.outputs.ipv4 == '' }}
         run: |
