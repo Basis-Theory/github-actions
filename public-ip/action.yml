@@ -1,0 +1,14 @@
+name: 'Public IP'
+description: 'Gets the Public IP of this GitHub Actions runner'
+outputs:
+  ipv4:
+    description: "The ipv4 address of the GitHub Actions runner"
+    value: ${{ steps.ip.outputs.ipv4 }}
+runs:
+  using: "composite"
+  steps:
+    - name: Get Public IP
+      id: ip
+      shell: bash
+      run: |
+        curl -s 'https://echo.basistheory.com/ip' | jq '.origin' | sed -r 's/^"([^,]+).*$/ipv4=\1/' >> "$GITHUB_OUTPUT"
