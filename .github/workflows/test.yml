@@ -18,3 +18,14 @@ jobs:
           npm install
       - run: |
           npm run all
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Public IP
+        id: ip
+        uses: ./public-ip
+        
+      - name: Assert Public IP Not Empty
+        if: ${{ steps.ip.outputs.ipv4 }} == ""
+        run: exit 1
