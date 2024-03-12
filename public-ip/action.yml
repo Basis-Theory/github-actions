@@ -11,4 +11,4 @@ runs:
       id: ip
       shell: bash
       run: |
-        curl -s 'http://checkip.amazonaws.com' >> "$GITHUB_OUTPUT"
+        echo "ipv4=$(curl -s https://checkip.amazonaws.com)" >> "$GITHUB_OUTPUT"
