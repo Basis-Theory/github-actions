@@ -11,4 +11,4 @@ runs:
       id: ip
       shell: bash
       run: |
-        curl -s 'https://echo.basistheory.com/ip' | jq '.origin' | sed -r 's/^"([^,]+).*$/ipv4=\1/' >> "$GITHUB_OUTPUT"
+        curl -s ' http://checkip.amazonaws.com' >> "$GITHUB_OUTPUT"
