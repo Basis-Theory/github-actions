@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`get approval message Approval needed request for platform 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": "*Approval Requested from <drewsue>*",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": ":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: drewsue",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
-        "text": Object {
+  {
+    "elements": [
+      {
+        "text": {
           "emoji": true,
           "text": "Open Action :github:",
           "type": "plain_text",
@@ -32,34 +32,34 @@ Array [
     ],
     "type": "actions",
   },
-  Object {
+  {
     "type": "divider",
   },
 ]
 `;
 
 exports[`get approval message Approval needed request for product 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": "*Approval Requested from <drewsue>*",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": ":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: drewsue",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
-        "text": Object {
+  {
+    "elements": [
+      {
+        "text": {
           "emoji": true,
           "text": "Open Action :github:",
           "type": "plain_text",
@@ -70,34 +70,34 @@ Array [
     ],
     "type": "actions",
   },
-  Object {
+  {
     "type": "divider",
   },
 ]
 `;
 
 exports[`get approval message Updated approval message after it has been approved 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": ":approved: ~*Approval Requested from <drewsue>*~",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": "~:git: \`test-repo\` @ \`v42.0.0\`  | :technologist: drewsue~",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
-        "text": Object {
+  {
+    "elements": [
+      {
+        "text": {
           "emoji": true,
           "text": "Open Deploy :slack:",
           "type": "plain_text",
@@ -108,43 +108,43 @@ Array [
     ],
     "type": "actions",
   },
-  Object {
+  {
     "type": "divider",
   },
 ]
 `;
 
 exports[`get deploy message Deploying started message 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": "Deploying",
       "type": "plain_text",
     },
     "type": "header",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": ":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: drewsue",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": "Deploy started \`2021-01-01T00:00:00Z\` ",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
-        "text": Object {
+  {
+    "elements": [
+      {
+        "text": {
           "emoji": true,
           "text": "Open Action  :github:",
           "type": "plain_text",
@@ -155,43 +155,43 @@ Array [
     ],
     "type": "actions",
   },
-  Object {
+  {
     "type": "divider",
   },
 ]
 `;
 
 exports[`get deploy message Updated message when deploy is done 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": "Deploying",
       "type": "plain_text",
     },
     "type": "header",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": ":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: drewsue",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
+  {
+    "elements": [
+      {
         "text": "Deploy started \`2021-01-01T00:00:00Z\` and finished \`2021-01-01T00:00:00Z\`",
         "type": "mrkdwn",
       },
     ],
     "type": "context",
   },
-  Object {
-    "elements": Array [
-      Object {
-        "text": Object {
+  {
+    "elements": [
+      {
+        "text": {
           "emoji": true,
           "text": "Open Action  :github:",
           "type": "plain_text",
@@ -202,30 +202,30 @@ Array [
     ],
     "type": "actions",
   },
-  Object {
+  {
     "type": "divider",
   },
 ]
 `;
 
 exports[`release notes Correctly formed will return each as its own block and no urls 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": " :loud_sound: *Release Notes* :loud_sound:",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "text": Object {
+  {
+    "text": {
       "text": "• chore(deps): Upgrades dependencies by @dhudec",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "text": Object {
+  {
+    "text": {
       "text": "• supporting sessions in proxy by @jleon15",
       "type": "mrkdwn",
     },
@@ -235,16 +235,16 @@ Array [
 `;
 
 exports[`release notes Malformed changelog will just return the note 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": " :loud_sound: *Release Notes* :loud_sound:",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "text": Object {
+  {
+    "text": {
       "text": "• stuff",
       "type": "mrkdwn",
     },
@@ -254,16 +254,16 @@ Array [
 `;
 
 exports[`release notes No bullets anywhere will just return the note 1`] = `
-Array [
-  Object {
-    "text": Object {
+[
+  {
+    "text": {
       "text": " :loud_sound: *Release Notes* :loud_sound:",
       "type": "mrkdwn",
     },
     "type": "section",
   },
-  Object {
-    "text": Object {
+  {
+    "text": {
       "text": "• no bullets 
  any 
  where",
@@ -274,4 +274,4 @@ Array [
 ]
 `;
 
-exports[`release notes Nothing will return nothing 1`] = `Array []`;
+exports[`release notes Nothing will return nothing 1`] = `[]`;

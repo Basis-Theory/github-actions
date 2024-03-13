@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`happy path should return the expected config 1`] = `
-Object {
+{
   "action_url": "http://test-repo.com/testing/actions/runs/12",
   "author": "luvi",
   "channel": "C1234567890",
@@ -18,7 +18,7 @@ Object {
 `;
 
 exports[`no release or commit should return the expected config 1`] = `
-Object {
+{
   "action_url": "http://test-repo.com/testing/actions/runs/12",
   "author": "drewsue",
   "channel": "C1234567890",
@@ -35,7 +35,7 @@ Object {
 `;
 
 exports[`no release should return the expected config 1`] = `
-Object {
+{
   "action_url": "http://test-repo.com/testing/actions/runs/12",
   "author": "drewsue",
   "channel": "C1234567890",
@@ -52,7 +52,7 @@ Object {
 `;
 
 exports[`release created by github should return the expected config 1`] = `
-Object {
+{
   "action_url": "http://test-repo.com/testing/actions/runs/12",
   "author": "drewsue",
   "channel": "C1234567890",
