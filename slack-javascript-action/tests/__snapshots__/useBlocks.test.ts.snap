@@ -4,10 +4,19 @@ exports[`draft release ready Nothing will return nothing 1`] = `
 [
   {
     "text": {
-      "text": ":package: New Draft Version Created: test-repo@v42.0.0",
+      "text": ":package: test-repo@v42.0.0",
       "type": "plain_text",
     },
     "type": "header",
+  },
+  {
+    "elements": [
+      {
+        "text": "New Draft Version Created:",
+        "type": "plain_text",
+      },
+    ],
+    "type": "context",
   },
   {
     "elements": [

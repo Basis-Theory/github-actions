@@ -96,7 +96,7 @@ const getDraftReleaseReadyMessage = ({
   repository,
   version,
 }: ConfigType): any => {
-  let header_text = `:package: New Draft Version Created: ${repository}@${version}`;
+  let header_text = `:package: ${repository}@${version}`;
 
   return [
     {
@@ -105,6 +105,13 @@ const getDraftReleaseReadyMessage = ({
         type: "plain_text",
         text: header_text,
       },
+    },
+    {
+        type: "context",
+        elements: [{
+            type: "plain_text",
+            text: `New Draft Version Created:`,
+        }]
     },
     {
       type: "actions",

@@ -403,7 +403,7 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
     ];
 };
 const getDraftReleaseReadyMessage = ({ repository, version, }) => {
-    let header_text = `:package: New Draft Version Created: ${repository}@${version}`;
+    let header_text = `:package: ${repository}@${version}`;
     return [
         {
             type: "header",
@@ -411,6 +411,13 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
                 type: "plain_text",
                 text: header_text,
             },
+        },
+        {
+            type: "context",
+            elements: [{
+                    type: "plain_text",
+                    text: `New Draft Version Created:`,
+                }]
         },
         {
             type: "actions",
