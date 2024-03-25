@@ -402,7 +402,7 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
         },
     ];
 };
-const getDraftReleaseReadyMessage = ({ repository, version }) => {
+const getDraftReleaseReadyMessage = ({ repository, version, }) => {
     let header_text = `New Draft Version Created: ${repository}@${version}`;
     return [
         {
