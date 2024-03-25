@@ -92,9 +92,10 @@ const getApprovalMessage = (
   ];
 };
 
-const getDraftReleaseReadyMessage = (
-  { repository, version }: ConfigType,
-): any => {
+const getDraftReleaseReadyMessage = ({
+  repository,
+  version,
+}: ConfigType): any => {
   let header_text = `New Draft Version Created: ${repository}@${version}`;
 
   return [

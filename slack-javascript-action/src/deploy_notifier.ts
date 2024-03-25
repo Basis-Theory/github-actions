@@ -5,7 +5,7 @@ import {
   alertDeployStarting,
   threadReleaseNotes,
 } from "./deploy.helpers";
-import {draftReleaseIsReady} from "./draft_release_ready.helpers";
+import { draftReleaseIsReady } from "./draft_release_ready.helpers";
 
 export const deploy_notifier = async () => {
   const config = useConfig();

@@ -195,22 +195,58 @@ exports.deploy_notifier = void 0;
 const useConfig_1 = __importDefault(__nccwpck_require__(3197));
 const approval_helpers_1 = __nccwpck_require__(3067);
 const deploy_helpers_1 = __nccwpck_require__(321);
+const draft_release_ready_helpers_1 = __nccwpck_require__(5007);
 const deploy_notifier = () => __awaiter(void 0, void 0, void 0, function* () {
     const config = (0, useConfig_1.default)();
-    if (config.status === "request") {
-        return yield (0, approval_helpers_1.askForApproval)(config);
-    }
-    else if (config.status === "done" || config.message_id) {
-        return yield (0, deploy_helpers_1.alertDeployDone)(config);
+    if (config.type === "draft-release-ready") {
+        return yield (0, draft_release_ready_helpers_1.draftReleaseIsReady)(config);
     }
     else {
-        const message = yield (0, deploy_helpers_1.alertDeployStarting)(config);
-        const releaseNotes = yield (0, deploy_helpers_1.threadReleaseNotes)(Object.assign(Object.assign({}, config), { message_id: message.ts }));
-        const approvalGranted = yield (0, approval_helpers_1.approvalWasGranted)(config, message);
-        return { message, releaseNotes, approvalGranted };
+        if (config.status === "request") {
+            return yield (0, approval_helpers_1.askForApproval)(config);
+        }
+        else if (config.status === "done" || config.message_id) {
+            return yield (0, deploy_helpers_1.alertDeployDone)(config);
+        }
+        else {
+            const message = yield (0, deploy_helpers_1.alertDeployStarting)(config);
+            const releaseNotes = yield (0, deploy_helpers_1.threadReleaseNotes)(Object.assign(Object.assign({}, config), { message_id: message.ts }));
+            const approvalGranted = yield (0, approval_helpers_1.approvalWasGranted)(config, message);
+            return { message, releaseNotes, approvalGranted };
+        }
     }
 });
 exports.deploy_notifier = deploy_notifier;
+
+
+/***/ }),
+
+/***/ 5007:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.draftReleaseIsReady = void 0;
+const slack_client_1 = __nccwpck_require__(7744);
+const useBlocks_1 = __importDefault(__nccwpck_require__(8613));
+const draftReleaseIsReady = (config) => __awaiter(void 0, void 0, void 0, function* () {
+    const message = yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseReadyMessage(config));
+    return message.ts;
+});
+exports.draftReleaseIsReady = draftReleaseIsReady;
 
 
 /***/ }),
@@ -366,6 +402,35 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
         },
     ];
 };
+const getDraftReleaseReadyMessage = ({ repository, version }) => {
+    let header_text = `New Draft Version Created: ${repository}@${version}`;
+    return [
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: header_text,
+            },
+        },
+        {
+            type: "actions",
+            elements: [
+                {
+                    type: "button",
+                    text: {
+                        type: "plain_text",
+                        text: "Open Release :slack:",
+                        emoji: true,
+                    },
+                    url: `https://github.com/Basis-Theory/${repository}/releases/edit/${version}`,
+                },
+            ],
+        },
+        {
+            type: "divider",
+        },
+    ];
+};
 const getFailedMention = ({ mention_person }) => {
     const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
     return [
@@ -425,6 +490,7 @@ const getDeployMessage = (heading, { repository, version, author, action_url, st
 const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
+    getDraftReleaseReadyMessage,
     getDeployMessage,
     getFailedMention,
 });
@@ -483,6 +549,7 @@ const getStoppedTimestamp = () => getDateTime();
 const useConfig = () => {
     const githubContext = JSON.parse((0, core_1.getInput)("github"));
     const status = (0, core_1.getInput)("status");
+    const type = (0, core_1.getInput)("type");
     const channel = (0, core_1.getInput)("channel");
     const mention_person = (0, core_1.getInput)("mention-person");
     const job_status = process.env.job_status;
@@ -498,6 +565,7 @@ const useConfig = () => {
         startedTimestamp,
         stoppedTimestamp,
         status,
+        type,
         job_status,
         channel,
         mention_person,

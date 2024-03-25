@@ -64,7 +64,6 @@ const draftRelease = async () => {
   return await deploy_notifier();
 };
 
-
 describe("draft created", () => {
   test("send draft release ready", async () => {
     expect(await draftRelease()).toMatchSnapshot();
