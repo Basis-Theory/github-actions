@@ -15,6 +15,9 @@ inputs:
   status:
     description: "Status of run [start, done, request]"
     default: "start"
+  type:
+    description: "Type of notification [deploy, draft-release-ready]"
+    default: "deploy"
 runs:
   using: "node16"
   main: "../slack-javascript-action/dist/deploy/index.js"

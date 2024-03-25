@@ -5,6 +5,7 @@ export type ConfigType = {
   version: string;
   release_notes: string;
   author: string;
+  type: string;
   action_url: string;
   message_id: string | undefined;
   startedTimestamp: string;
@@ -94,6 +95,7 @@ const getStoppedTimestamp = (): string => getDateTime();
 const useConfig = (): ConfigType => {
   const githubContext: GithubContextType = JSON.parse(getInput("github"));
   const status = getInput("status");
+  const type = getInput("type");
   const channel = getInput("channel");
   const mention_person = getInput("mention-person");
   const job_status = process.env.job_status;
@@ -110,6 +112,7 @@ const useConfig = (): ConfigType => {
     startedTimestamp,
     stoppedTimestamp,
     status,
+    type,
     job_status,
     channel,
     mention_person,

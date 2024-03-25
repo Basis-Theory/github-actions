@@ -1,6 +1,30 @@
 import useBlocks from "../src/useBlocks";
 import { ConfigType } from "../src/useConfig";
 
+describe("draft release ready", () => {
+  test("Nothing will return nothing", () => {
+    const config: ConfigType = {
+      job_status: undefined,
+      message_id: undefined,
+      release_notes: "",
+      startedTimestamp: "",
+      status: "",
+      stoppedTimestamp: "",
+      repository: "test-repo",
+      version: "v42.0.0",
+      author: "drewsue",
+      action_url: "http://test-repo.com/action",
+      channel: "C1234567890",
+      mention_person: "drewsue",
+      type: "deploy",
+    };
+
+    const slackReleaseNotes = useBlocks().getDraftReleaseReadyMessage(config);
+
+    expect(slackReleaseNotes).toMatchSnapshot();
+  });
+});
+
 describe("release notes", () => {
   test("Nothing will return nothing", () => {
     const githubReleaseNotes = ``;
@@ -54,6 +78,7 @@ describe("get approval message", () => {
       action_url: "http://test-repo.com/action",
       channel: "C1234567890",
       mention_person: "drewsue",
+      type: "deploy",
     };
 
     const approvalMessage = useBlocks().getApprovalMessage(config);
@@ -75,6 +100,7 @@ describe("get approval message", () => {
       action_url: "http://test-repo.com/action",
       channel: "C1234567890",
       mention_person: "drewsue",
+      type: "deploy",
     };
 
     const approvalMessage = useBlocks().getApprovalMessage(config);
@@ -101,6 +127,7 @@ describe("get approval message", () => {
       action_url: "http://test-repo.com/action",
       channel: "C1234567890",
       mention_person: "drewsue",
+      type: "deploy",
     };
 
     const approvalMessage = useBlocks().getApprovalMessage(
@@ -128,6 +155,7 @@ describe("get deploy message", () => {
       startedTimestamp: "2021-01-01T00:00:00Z",
       channel: "chan-123",
       mention_person: "drewsue",
+      type: "deploy",
     };
 
     const approvalMessage = useBlocks().getDeployMessage("Deploying", config);
@@ -149,6 +177,7 @@ describe("get deploy message", () => {
       stoppedTimestamp: "2021-01-01T00:00:00Z",
       channel: "chan-123",
       mention_person: "drewsue",
+      type: "deploy",
     };
 
     const approvalMessage = useBlocks().getDeployMessage("Deploying", config);
