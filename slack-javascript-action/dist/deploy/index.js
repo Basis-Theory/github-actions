@@ -556,7 +556,7 @@ const getStartedTimestamp = () => {
 };
 const getStoppedTimestamp = () => getDateTime();
 const useConfig = () => {
-    console.log(JSON.stringify((JSON.parse((0, core_1.getInput)("github"))), null, 2));
+    console.log(JSON.stringify(JSON.parse((0, core_1.getInput)("github")), null, 2));
     const githubContext = JSON.parse((0, core_1.getInput)("github"));
     const status = (0, core_1.getInput)("status");
     const type = (0, core_1.getInput)("type");
