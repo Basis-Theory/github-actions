@@ -23,7 +23,7 @@ exports[`draft release ready Nothing will return nothing 1`] = `
       {
         "text": {
           "emoji": true,
-          "text": "Open Release :slack:",
+          "text": "Open Release :github:",
           "type": "plain_text",
         },
         "type": "button",

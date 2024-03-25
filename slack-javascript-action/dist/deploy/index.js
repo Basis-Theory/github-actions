@@ -428,7 +428,7 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
                     type: "button",
                     text: {
                         type: "plain_text",
-                        text: "Open Release :slack:",
+                        text: "Open Release :github:",
                         emoji: true,
                     },
                     url: `https://github.com/Basis-Theory/${repository}/releases/edit/${version}`,
