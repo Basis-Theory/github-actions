@@ -107,11 +107,13 @@ const getDraftReleaseReadyMessage = ({
       },
     },
     {
-        type: "context",
-        elements: [{
-            type: "plain_text",
-            text: `New Draft Version Created:`,
-        }]
+      type: "context",
+      elements: [
+        {
+          type: "plain_text",
+          text: `New Draft Version Created:`,
+        },
+      ],
     },
     {
       type: "actions",
