@@ -5,22 +5,27 @@ import {
   alertDeployStarting,
   threadReleaseNotes,
 } from "./deploy.helpers";
+import {draftReleaseIsReady} from "./draft_release_ready.helpers";
 
 export const deploy_notifier = async () => {
   const config = useConfig();
 
-  if (config.status === "request") {
-    return await askForApproval(config);
-  } else if (config.status === "done" || config.message_id) {
-    return await alertDeployDone(config);
+  if (config.type === "draft-release-ready") {
+    return await draftReleaseIsReady(config);
   } else {
-    const message = await alertDeployStarting(config);
-    const releaseNotes = await threadReleaseNotes({
-      ...config,
-      message_id: message.ts,
-    });
-    const approvalGranted = await approvalWasGranted(config, message);
+    if (config.status === "request") {
+      return await askForApproval(config);
+    } else if (config.status === "done" || config.message_id) {
+      return await alertDeployDone(config);
+    } else {
+      const message = await alertDeployStarting(config);
+      const releaseNotes = await threadReleaseNotes({
+        ...config,
+        message_id: message.ts,
+      });
+      const approvalGranted = await approvalWasGranted(config, message);
 
-    return { message, releaseNotes, approvalGranted };
+      return { message, releaseNotes, approvalGranted };
+    }
   }
 };

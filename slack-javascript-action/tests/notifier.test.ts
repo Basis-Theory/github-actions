@@ -59,6 +59,18 @@ const deployFailed = async () => {
   return await deploy_notifier();
 };
 
+const draftRelease = async () => {
+  mockGetInput({ type: "draft-release-ready" });
+  return await deploy_notifier();
+};
+
+
+describe("draft created", () => {
+  test("send draft release ready", async () => {
+    expect(await draftRelease()).toMatchSnapshot();
+  });
+});
+
 describe("build success", () => {
   test("send request for approval", async () => {
     expect(await requestDeploy()).toMatchSnapshot();

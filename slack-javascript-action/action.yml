@@ -7,6 +7,9 @@ inputs:
   github:
     description: "Github"
     required: true
+  type:
+    description: "Type of notification [deploy, draft-release-ready]"
+    default: "deploy"
   status:
     description: "Status of run [start, done, request]"
     default: "start"

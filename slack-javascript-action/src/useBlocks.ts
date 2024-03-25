@@ -92,6 +92,39 @@ const getApprovalMessage = (
   ];
 };
 
+const getDraftReleaseReadyMessage = (
+  { repository, version }: ConfigType,
+): any => {
+  let header_text = `New Draft Version Created: ${repository}@${version}`;
+
+  return [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: header_text,
+      },
+    },
+    {
+      type: "actions",
+      elements: [
+        {
+          type: "button",
+          text: {
+            type: "plain_text",
+            text: "Open Release :slack:",
+            emoji: true,
+          },
+          url: `https://github.com/Basis-Theory/${repository}/releases/edit/${version}`,
+        },
+      ],
+    },
+    {
+      type: "divider",
+    },
+  ];
+};
+
 const getFailedMention = ({ mention_person }: ConfigType): any => {
   const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
   return [
@@ -166,6 +199,7 @@ const getDeployMessage = (
 const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
+  getDraftReleaseReadyMessage,
   getDeployMessage,
   getFailedMention,
 });

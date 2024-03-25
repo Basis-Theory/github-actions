@@ -13,6 +13,7 @@ exports[`happy path should return the expected config 1`] = `
   "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
   "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "type": undefined,
   "version": "v42.0.0",
 }
 `;
@@ -30,6 +31,7 @@ exports[`no release or commit should return the expected config 1`] = `
   "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
   "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "type": undefined,
   "version": "123456",
 }
 `;
@@ -47,6 +49,7 @@ exports[`no release should return the expected config 1`] = `
   "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
   "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "type": undefined,
   "version": "123456",
 }
 `;
@@ -64,6 +67,7 @@ exports[`release created by github should return the expected config 1`] = `
   "startedTimestamp": "03/31/2020, 7:00:00 PM CDT",
   "status": "done",
   "stoppedTimestamp": "03/31/2020, 7:00:00 PM CDT",
+  "type": undefined,
   "version": "123456",
 }
 `;
