@@ -457,7 +457,7 @@ const getDraftReleaseCollabs = (release_notes) => {
     };
     let matches = release_notes.match(regex);
     console.log(matches);
-    const mentions = matches === null || matches === void 0 ? void 0 : matches.map((u) => githubToSlack[u.trim()]).map((mention) => `<${mention}>`).join(" ");
+    const mentions = matches === null || matches === void 0 ? void 0 : matches.map((u) => githubToSlack[u.trim()]).map((mention) => `<!${mention}>`).join(" ");
     console.log(mentions);
     return `:technologist: : ${mentions}`;
 };
