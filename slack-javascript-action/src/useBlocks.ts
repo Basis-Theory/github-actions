@@ -161,7 +161,7 @@ const getDraftReleaseCollabs = (release_notes: string): any => {
 
   const mentions = matches
     ?.map((u) => githubToSlack[u.trim()])
-    .map((mention) => `<!${mention}>`)
+    .map((mention) => `<@${mention}>`)
     .join(" ");
 
   console.log(mentions);
