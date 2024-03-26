@@ -1,43 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`draft release ready Nothing will return nothing 1`] = `
-[
-  {
-    "text": {
-      "text": ":package: test-repo@v42.0.0",
-      "type": "plain_text",
-    },
-    "type": "header",
-  },
-  {
-    "elements": [
-      {
-        "text": "New Draft Version Created by: :technologist: : undefined",
-        "type": "mrkdwn",
-      },
-    ],
-    "type": "context",
-  },
-  {
-    "elements": [
-      {
-        "text": {
-          "emoji": true,
-          "text": "Open Release :github:",
-          "type": "plain_text",
-        },
-        "type": "button",
-        "url": "https://github.com/Basis-Theory/test-repo/releases/edit/v42.0.0",
-      },
-    ],
-    "type": "actions",
-  },
-  {
-    "type": "divider",
-  },
-]
-`;
-
 exports[`get approval message Approval needed request for platform 1`] = `
 [
   {

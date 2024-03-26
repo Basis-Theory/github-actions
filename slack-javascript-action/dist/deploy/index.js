@@ -444,13 +444,20 @@ const getDraftReleaseCollabs = (release_notes) => {
     const regex = /@[^ ]+/g;
     const githubToSlack = {
         "@drewsue": "SLACK_ID",
-        "@james": "U01GRDZ7XJ6",
+        "@armsteadj1": "U01GRDZ7XJ6",
+        "@brigonzalez": "U01Q14S62GN",
+        "@dhudec": "U029GBW14P3",
+        "@djejaquino": "U01KFJLKV0F",
+        "@greathouse": "U06NM3NG477",
+        "@jleon15": "U02N976BDB6",
+        "@JustJordanT": "U02G64KK6DC",
+        "@kevinperaza": "U046MNLFEUW",
+        "@lcschy": "U026LV447FG",
+        "@mstrisoline": "U01PT4W3RM5",
     };
     let matches = release_notes.match(regex);
-    console.log(matches);
     const mentions = matches === null || matches === void 0 ? void 0 : matches.map((u) => githubToSlack[u.trim()]).map((mention) => `<@${mention}>`).join(" ");
-    console.log(mentions);
-    return `:technologist: : ${mentions}`;
+    return `${mentions}`;
 };
 const getFailedMention = ({ mention_person }) => {
     const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";

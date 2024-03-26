@@ -144,22 +144,27 @@ interface GithubToSlack {
 const getDraftReleaseCollabs = (release_notes: string): any => {
   const regex = /@[^ ]+/g;
   const githubToSlack: GithubToSlack = {
-    "@drewsue": "SLACK_ID",
-    "@james": "U01GRDZ7XJ6",
+    "@drewsue": "SLACK_ID", //leave for tests
+    "@armsteadj1": "U01GRDZ7XJ6",
+    "@brigonzalez": "U01Q14S62GN",
+    "@dhudec": "U029GBW14P3",
+    "@djejaquino": "U01KFJLKV0F",
+    "@greathouse": "U06NM3NG477",
+    "@jleon15": "U02N976BDB6",
+    "@JustJordanT": "U02G64KK6DC",
+    "@kevinperaza": "U046MNLFEUW",
+    "@lcschy": "U026LV447FG",
+    "@mstrisoline": "U01PT4W3RM5",
   };
 
   let matches = release_notes.match(regex);
-
-  console.log(matches);
 
   const mentions = matches
     ?.map((u) => githubToSlack[u.trim()])
     .map((mention) => `<@${mention}>`)
     .join(" ");
 
-  console.log(mentions);
-
-  return `:technologist: : ${mentions}`;
+  return `${mentions}`;
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {
