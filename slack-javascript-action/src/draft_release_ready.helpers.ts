@@ -8,9 +8,6 @@ const draftReleaseIsReady = async (config: ConfigType) => {
     useBlocks().getDraftReleaseReadyMessage(config)
   );
 
-  const { blocks, text } = useBlocks().getDraftReleaseCollabs(config);
-  await sendMessage(config.channel, blocks, text, message.ts);
-
   return message.ts;
 };
 

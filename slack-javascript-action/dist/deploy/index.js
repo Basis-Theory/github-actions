@@ -244,8 +244,6 @@ const slack_client_1 = __nccwpck_require__(7744);
 const useBlocks_1 = __importDefault(__nccwpck_require__(8613));
 const draftReleaseIsReady = (config) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseReadyMessage(config));
-    const { blocks, text } = (0, useBlocks_1.default)().getDraftReleaseCollabs(config);
-    yield (0, slack_client_1.sendMessage)(config.channel, blocks, text, message.ts);
     return message.ts;
 });
 exports.draftReleaseIsReady = draftReleaseIsReady;
@@ -404,7 +402,7 @@ const getApprovalMessage = ({ repository, version, author, action_url, mention_p
         },
     ];
 };
-const getDraftReleaseReadyMessage = ({ repository, version, }) => {
+const getDraftReleaseReadyMessage = ({ repository, version, release_notes, }) => {
     let header_text = `:package: ${repository}@${version}`;
     return [
         {
@@ -419,7 +417,16 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
             elements: [
                 {
                     type: "plain_text",
-                    text: `New Draft Version Created`,
+                    text: `New Draft Version Created by:`,
+                },
+            ],
+        },
+        {
+            type: "context",
+            elements: [
+                {
+                    type: "plain_text",
+                    text: getDraftReleaseCollabs(release_notes),
                 },
             ],
         },
@@ -442,7 +449,7 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
         },
     ];
 };
-const getDraftReleaseCollabs = ({ release_notes }) => {
+const getDraftReleaseCollabs = (release_notes) => {
     const regex = /@[^ ]+/g;
     const githubToSlack = {
         "@drewsue": "SLACK_ID",
@@ -450,21 +457,9 @@ const getDraftReleaseCollabs = ({ release_notes }) => {
     };
     let matches = release_notes.match(regex);
     console.log(matches);
-    const mentions = matches === null || matches === void 0 ? void 0 : matches.map((u) => githubToSlack[u]).map((mention) => `<${mention}>`).join(" ");
+    const mentions = matches === null || matches === void 0 ? void 0 : matches.map((u) => githubToSlack[u.trim()]).map((mention) => `<${mention}>`).join(" ");
     console.log(mentions);
-    let text = `:technologist: : ${mentions}`;
-    return {
-        text,
-        blocks: [
-            {
-                type: "section",
-                text: {
-                    type: "mrkdwn",
-                    text,
-                },
-            },
-        ],
-    };
+    return `:technologist: : ${mentions}`;
 };
 const getFailedMention = ({ mention_person }) => {
     const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
@@ -525,7 +520,6 @@ const getDeployMessage = (heading, { repository, version, author, action_url, st
 const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
-    getDraftReleaseCollabs,
     getDraftReleaseReadyMessage,
     getDeployMessage,
     getFailedMention,

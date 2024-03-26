@@ -818,7 +818,7 @@ exports[`build success start deploy with request 6`] = `
 
 exports[`draft created send draft release ready 1`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":package: test-repo@v42.0.0"}},{"type":"context","elements":[{"type":"plain_text","text":"New Draft Version Created"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Release :github:","emoji":true},"url":"https://github.com/Basis-Theory/test-repo/releases/edit/v42.0.0"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":package: test-repo@v42.0.0"}},{"type":"context","elements":[{"type":"plain_text","text":"New Draft Version Created by:"}]},{"type":"context","elements":[{"type":"plain_text","text":":technologist: : <SLACK_ID>"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Release :github:","emoji":true},"url":"https://github.com/Basis-Theory/test-repo/releases/edit/v42.0.0"}]},{"type":"divider"}],"text":"","thread_ts":""}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -850,41 +850,7 @@ exports[`draft created send draft release ready 1`] = `
 }
 `;
 
-exports[`draft created send draft release ready 2`] = `
-{
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":technologist: : <SLACK_ID>"}}],"text":":technologist: : <SLACK_ID>","thread_ts":"created message id"}",
-  "env": {
-    "Blob": [Function],
-    "FormData": [Function],
-  },
-  "headers": {
-    "Accept": "application/json, text/plain, */*",
-    "Authorization": "Bearer slack api key",
-    "Content-Type": "application/json",
-  },
-  "maxBodyLength": -1,
-  "maxContentLength": -1,
-  "method": "post",
-  "timeout": 0,
-  "transformRequest": [
-    [Function],
-  ],
-  "transformResponse": [
-    [Function],
-  ],
-  "transitional": {
-    "clarifyTimeoutError": false,
-    "forcedJSONParsing": true,
-    "silentJSONParsing": true,
-  },
-  "url": "https://slack.com/api/chat.postMessage",
-  "validateStatus": [Function],
-  "xsrfCookieName": "XSRF-TOKEN",
-  "xsrfHeaderName": "X-XSRF-TOKEN",
-}
-`;
-
-exports[`draft created send draft release ready 3`] = `"created message id"`;
+exports[`draft created send draft release ready 2`] = `"created message id"`;
 
 exports[`failed build send new message when none exists 1`] = `
 {

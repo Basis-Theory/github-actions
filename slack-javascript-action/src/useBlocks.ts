@@ -95,9 +95,9 @@ const getApprovalMessage = (
 const getDraftReleaseReadyMessage = ({
   repository,
   version,
+  release_notes,
 }: ConfigType): any => {
   let header_text = `:package: ${repository}@${version}`;
-
   return [
     {
       type: "header",
@@ -111,7 +111,16 @@ const getDraftReleaseReadyMessage = ({
       elements: [
         {
           type: "plain_text",
-          text: `New Draft Version Created`,
+          text: `New Draft Version Created by:`,
+        },
+      ],
+    },
+    {
+      type: "context",
+      elements: [
+        {
+          type: "plain_text",
+          text: getDraftReleaseCollabs(release_notes),
         },
       ],
     },
@@ -139,7 +148,7 @@ interface GithubToSlack {
   [key: string]: string;
 }
 
-const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
+const getDraftReleaseCollabs = (release_notes: string): any => {
   const regex = /@[^ ]+/g;
   const githubToSlack: GithubToSlack = {
     "@drewsue": "SLACK_ID",
@@ -151,26 +160,13 @@ const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
   console.log(matches);
 
   const mentions = matches
-    ?.map((u) => githubToSlack[u])
+    ?.map((u) => githubToSlack[u.trim()])
     .map((mention) => `<${mention}>`)
     .join(" ");
 
   console.log(mentions);
 
-  let text = `:technologist: : ${mentions}`;
-
-  return {
-    text,
-    blocks: [
-      {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text,
-        },
-      },
-    ],
-  };
+  return `:technologist: : ${mentions}`;
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {
@@ -247,7 +243,6 @@ const getDeployMessage = (
 const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
-  getDraftReleaseCollabs,
   getDraftReleaseReadyMessage,
   getDeployMessage,
   getFailedMention,
