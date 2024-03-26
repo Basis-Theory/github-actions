@@ -441,14 +441,15 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
         },
     ];
 };
-const getDraftReleaseCollabs = ({ release_notes, }) => {
+const getDraftReleaseCollabs = ({ release_notes }) => {
     var _a;
     const regex = /@[^ ]+/g;
     const githubToSlack = {
         "@drewsue": "SLACK_ID",
         "@james": "U01GRDZ7XJ6",
     };
-    const mentions = (_a = release_notes.match(regex)) === null || _a === void 0 ? void 0 : _a.map(u => githubToSlack[u]).map((mention) => `<${mention.trim()}>`).join("");
+    const mentions = (_a = release_notes
+        .match(regex)) === null || _a === void 0 ? void 0 : _a.map((u) => githubToSlack[u]).map((mention) => `<${mention.trim()}>`).join("");
     console.log(mentions);
     return [
         {
