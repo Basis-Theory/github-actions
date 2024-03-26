@@ -159,15 +159,15 @@ const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
   return {
     text,
     blocks: [
-        {
-          type: "section",
-          text: {
-            type: "mrkdwn",
-            text,
-          },
-        }
-    ]
-  }
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text,
+        },
+      },
+    ],
+  };
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {

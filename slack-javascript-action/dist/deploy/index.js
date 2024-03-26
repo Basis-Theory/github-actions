@@ -244,7 +244,8 @@ const slack_client_1 = __nccwpck_require__(7744);
 const useBlocks_1 = __importDefault(__nccwpck_require__(8613));
 const draftReleaseIsReady = (config) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseReadyMessage(config));
-    yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseCollabs(config), "", message.ts);
+    const { blocks, text } = (0, useBlocks_1.default)().getDraftReleaseCollabs(config);
+    yield (0, slack_client_1.sendMessage)(config.channel, blocks, text, message.ts);
     return message.ts;
 });
 exports.draftReleaseIsReady = draftReleaseIsReady;
@@ -451,15 +452,19 @@ const getDraftReleaseCollabs = ({ release_notes }) => {
     const mentions = (_a = release_notes
         .match(regex)) === null || _a === void 0 ? void 0 : _a.map((u) => githubToSlack[u]).map((mention) => `<${mention.trim()}>`).join("");
     console.log(mentions);
-    return [
-        {
-            type: "section",
-            text: {
-                type: "mrkdwn",
-                text: `:technologist: : ${mentions}`,
+    let text = `:technologist: : ${mentions}`;
+    return {
+        text,
+        blocks: [
+            {
+                type: "section",
+                text: {
+                    type: "mrkdwn",
+                    text,
+                },
             },
-        },
-    ];
+        ],
+    };
 };
 const getFailedMention = ({ mention_person }) => {
     const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
