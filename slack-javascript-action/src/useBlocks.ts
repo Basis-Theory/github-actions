@@ -135,6 +135,33 @@ const getDraftReleaseReadyMessage = ({
   ];
 };
 
+interface GithubToSlack {
+  [key: string]: string;
+}
+
+const getDraftReleaseCollabs = ({release_notes,}: ConfigType): any => {
+  const regex = /@[^ ]+/g;
+  const githubToSlack: GithubToSlack = {
+      "@drewsue": "SLACK_ID",
+      "@james": "U01GRDZ7XJ6",
+  };
+
+  const mentions = release_notes.match(regex)?.map(u => githubToSlack[u])
+      .map((mention) => `<${mention.trim()}>`).join("");
+
+  console.log(mentions);
+
+  return [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `:technologist: : ${mentions}`,
+      },
+    },
+  ];
+};
+
 const getFailedMention = ({ mention_person }: ConfigType): any => {
   const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
   return [
@@ -209,6 +236,7 @@ const getDeployMessage = (
 const useBlocks = () => ({
   releaseNotesToBlocks,
   getApprovalMessage,
+  getDraftReleaseCollabs,
   getDraftReleaseReadyMessage,
   getDeployMessage,
   getFailedMention,

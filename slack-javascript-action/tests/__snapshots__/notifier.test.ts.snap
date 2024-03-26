@@ -36,7 +36,7 @@ exports[`build cancelled happy path request, start, cancelled 1`] = `
 
 exports[`build cancelled happy path request, start, cancelled 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -104,7 +104,7 @@ exports[`build cancelled happy path request, start, cancelled 3`] = `
 
 exports[`build cancelled happy path request, start, cancelled 4`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -278,7 +278,7 @@ exports[`build success happy path request, start, success 1`] = `
 
 exports[`build success happy path request, start, success 2`] = `
 {
-  "data": "{"channel":"request_channel123","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"request_channel123","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -346,7 +346,7 @@ exports[`build success happy path request, start, success 3`] = `
 
 exports[`build success happy path request, start, success 4`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -520,7 +520,7 @@ exports[`build success send request for approval 1`] = `
 
 exports[`build success send request for approval 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -590,7 +590,7 @@ exports[`build success start deploy with no request 1`] = `
 
 exports[`build success start deploy with no request 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -670,7 +670,7 @@ exports[`build success start deploy with request 1`] = `
 
 exports[`build success start deploy with request 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -738,7 +738,7 @@ exports[`build success start deploy with request 3`] = `
 
 exports[`build success start deploy with request 4`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• notes!"}}],"text":"notes!","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -850,7 +850,41 @@ exports[`draft created send draft release ready 1`] = `
 }
 `;
 
-exports[`draft created send draft release ready 2`] = `"created message id"`;
+exports[`draft created send draft release ready 2`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":technologist: : <SLACK_ID>"}}],"text":"","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`draft created send draft release ready 3`] = `"created message id"`;
 
 exports[`failed build send new message when none exists 1`] = `
 {
