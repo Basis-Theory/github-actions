@@ -110,17 +110,10 @@ const getDraftReleaseReadyMessage = ({
       type: "context",
       elements: [
         {
-          type: "plain_text",
-          text: `New Draft Version Created by:`,
-        },
-      ],
-    },
-    {
-      type: "context",
-      elements: [
-        {
-          type: "plain_text",
-          text: getDraftReleaseCollabs(release_notes),
+          type: "mrkdwn",
+          text: `New Draft Version Created by: ${getDraftReleaseCollabs(
+            release_notes
+          )}`,
         },
       ],
     },

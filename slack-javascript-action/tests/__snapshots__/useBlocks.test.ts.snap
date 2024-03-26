@@ -12,17 +12,8 @@ exports[`draft release ready Nothing will return nothing 1`] = `
   {
     "elements": [
       {
-        "text": "New Draft Version Created by:",
-        "type": "plain_text",
-      },
-    ],
-    "type": "context",
-  },
-  {
-    "elements": [
-      {
-        "text": ":technologist: : undefined",
-        "type": "plain_text",
+        "text": "New Draft Version Created by: :technologist: : undefined",
+        "type": "mrkdwn",
       },
     ],
     "type": "context",
