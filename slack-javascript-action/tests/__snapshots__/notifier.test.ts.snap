@@ -852,7 +852,7 @@ exports[`draft created send draft release ready 1`] = `
 
 exports[`draft created send draft release ready 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":technologist: : <SLACK_ID>"}}],"text":"","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":technologist: : <SLACK_ID>"}}],"text":":technologist: : <SLACK_ID>","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],

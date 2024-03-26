@@ -154,15 +154,20 @@ const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
 
   console.log(mentions);
 
-  return [
-    {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: `:technologist: : ${mentions}`,
-      },
-    },
-  ];
+  let text = `:technologist: : ${mentions}`;
+
+  return {
+    text,
+    blocks: [
+        {
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text,
+          },
+        }
+    ]
+  }
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {
