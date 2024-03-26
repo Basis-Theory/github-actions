@@ -419,7 +419,7 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
             elements: [
                 {
                     type: "plain_text",
-                    text: `New Draft Version Created:`,
+                    text: `New Draft Version Created`,
                 },
             ],
         },

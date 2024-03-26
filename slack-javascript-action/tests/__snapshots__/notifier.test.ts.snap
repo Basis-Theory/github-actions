@@ -818,7 +818,7 @@ exports[`build success start deploy with request 6`] = `
 
 exports[`draft created send draft release ready 1`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":package: test-repo@v42.0.0"}},{"type":"context","elements":[{"type":"plain_text","text":"New Draft Version Created:"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Release :github:","emoji":true},"url":"https://github.com/Basis-Theory/test-repo/releases/edit/v42.0.0"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":package: test-repo@v42.0.0"}},{"type":"context","elements":[{"type":"plain_text","text":"New Draft Version Created"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Release :github:","emoji":true},"url":"https://github.com/Basis-Theory/test-repo/releases/edit/v42.0.0"}]},{"type":"divider"}],"text":"","thread_ts":""}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],

@@ -12,7 +12,7 @@ exports[`draft release ready Nothing will return nothing 1`] = `
   {
     "elements": [
       {
-        "text": "New Draft Version Created:",
+        "text": "New Draft Version Created",
         "type": "plain_text",
       },
     ],
