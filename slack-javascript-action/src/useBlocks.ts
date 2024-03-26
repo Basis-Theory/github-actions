@@ -139,15 +139,18 @@ interface GithubToSlack {
   [key: string]: string;
 }
 
-const getDraftReleaseCollabs = ({release_notes,}: ConfigType): any => {
+const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
   const regex = /@[^ ]+/g;
   const githubToSlack: GithubToSlack = {
-      "@drewsue": "SLACK_ID",
-      "@james": "U01GRDZ7XJ6",
+    "@drewsue": "SLACK_ID",
+    "@james": "U01GRDZ7XJ6",
   };
 
-  const mentions = release_notes.match(regex)?.map(u => githubToSlack[u])
-      .map((mention) => `<${mention.trim()}>`).join("");
+  const mentions = release_notes
+    .match(regex)
+    ?.map((u) => githubToSlack[u])
+    .map((mention) => `<${mention.trim()}>`)
+    .join("");
 
   console.log(mentions);
 

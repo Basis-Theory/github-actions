@@ -244,6 +244,7 @@ const slack_client_1 = __nccwpck_require__(7744);
 const useBlocks_1 = __importDefault(__nccwpck_require__(8613));
 const draftReleaseIsReady = (config) => __awaiter(void 0, void 0, void 0, function* () {
     const message = yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseReadyMessage(config));
+    yield (0, slack_client_1.sendMessage)(config.channel, (0, useBlocks_1.default)().getDraftReleaseCollabs(config), "", message.ts);
     return message.ts;
 });
 exports.draftReleaseIsReady = draftReleaseIsReady;
@@ -440,6 +441,25 @@ const getDraftReleaseReadyMessage = ({ repository, version, }) => {
         },
     ];
 };
+const getDraftReleaseCollabs = ({ release_notes, }) => {
+    var _a;
+    const regex = /@[^ ]+/g;
+    const githubToSlack = {
+        "@drewsue": "SLACK_ID",
+        "@james": "U01GRDZ7XJ6",
+    };
+    const mentions = (_a = release_notes.match(regex)) === null || _a === void 0 ? void 0 : _a.map(u => githubToSlack[u]).map((mention) => `<${mention.trim()}>`).join("");
+    console.log(mentions);
+    return [
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: `:technologist: : ${mentions}`,
+            },
+        },
+    ];
+};
 const getFailedMention = ({ mention_person }) => {
     const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
     return [
@@ -499,6 +519,7 @@ const getDeployMessage = (heading, { repository, version, author, action_url, st
 const useBlocks = () => ({
     releaseNotesToBlocks,
     getApprovalMessage,
+    getDraftReleaseCollabs,
     getDraftReleaseReadyMessage,
     getDeployMessage,
     getFailedMention,
@@ -556,7 +577,6 @@ const getStartedTimestamp = () => {
 };
 const getStoppedTimestamp = () => getDateTime();
 const useConfig = () => {
-    console.log(JSON.stringify(JSON.parse((0, core_1.getInput)("github")), null, 2));
     const githubContext = JSON.parse((0, core_1.getInput)("github"));
     const status = (0, core_1.getInput)("status");
     const type = (0, core_1.getInput)("type");
