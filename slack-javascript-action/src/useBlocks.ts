@@ -146,11 +146,14 @@ const getDraftReleaseCollabs = ({ release_notes }: ConfigType): any => {
     "@james": "U01GRDZ7XJ6",
   };
 
-  const mentions = release_notes
-    .match(regex)
+  let matches = release_notes.match(regex);
+
+  console.log(matches);
+
+  const mentions = matches
     ?.map((u) => githubToSlack[u])
-    .map((mention) => `<${mention.trim()}>`)
-    .join("");
+    .map((mention) => `<${mention}>`)
+    .join(" ");
 
   console.log(mentions);
 
