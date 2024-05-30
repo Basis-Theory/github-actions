@@ -10,15 +10,18 @@ inputs:
   mention-person:
     description: "User to mention in message"
   status:
-    description: 'Status of run [start, done, request]'
+    description: 'Status of the deployment [start, done, request]'
     default: 'start'
+  job-status:
+    description: 'Status of the GitHub Actions job'
+    required: false
 runs:
   using: "composite"
   steps:
     - name: job-status
       shell: bash
       run: |
-        echo "job_status=${{ job.status }}" >> $GITHUB_ENV
+        echo "job_status=${{ inputs.job-status || job.status }}" >> $GITHUB_ENV
     - name: Notify
       uses: Basis-Theory/github-actions/helper-slack-action@master
       with:
