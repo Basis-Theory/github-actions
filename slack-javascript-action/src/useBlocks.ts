@@ -168,7 +168,7 @@ const getDraftReleaseCollabs = (release_notes: string): any => {
 };
 
 const getFailedMention = ({ mention_person }: ConfigType): any => {
-  const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
+  const mention = mention_person ? mention_person : "!subteam^S03SRBLDYBZ";
   return [
     {
       type: "section",

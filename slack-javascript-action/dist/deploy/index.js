@@ -460,7 +460,7 @@ const getDraftReleaseCollabs = (release_notes) => {
     return `${mentions}`;
 };
 const getFailedMention = ({ mention_person }) => {
-    const mention = mention_person ? mention_person : "!subteam^S04RC9KQ77F";
+    const mention = mention_person ? mention_person : "!subteam^S03SRBLDYBZ";
     return [
         {
             type: "section",
