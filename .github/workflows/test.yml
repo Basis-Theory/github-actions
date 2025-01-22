@@ -38,3 +38,8 @@ jobs:
         if: ${{ steps.ip.outputs.ipv4 == '' }}
         run: |
           exit 1
+
+  pr-security-check:
+    name: PR Security Check
+    uses: Basis-Theory/public-security-workflows/.github/workflows/pr-check.yml@master
+    secrets: inherit
