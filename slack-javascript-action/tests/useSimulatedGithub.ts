@@ -2,7 +2,7 @@ import { jest } from "@jest/globals";
 import * as core from "@actions/core";
 import * as artifact from "@actions/artifact";
 import { GithubContextType } from "../src/useConfig";
-import { ArtifactClient } from "@actions/artifact";
+import { ArtifactClient, DefaultArtifactClient } from "@actions/artifact";
 // @ts-ignore
 import fs from "fs";
 
@@ -73,25 +73,47 @@ const useSimulatedGithub = (
       );
     },
     mockArtifact: () => {
+      let mockedArtifact: any;
       const fakeArtifact = {
-        uploadArtifact: jest.fn(),
+        uploadArtifact: jest.fn(() => {
+          mockedArtifact = {
+            artifact: {
+              id: "1234567890",
+            },
+          };
+          return mockedArtifact;
+        }),
+        getArtifact: jest.fn().mockImplementation(() => ({
+          artifact: mockedArtifact,
+        })),
         downloadArtifact: jest.fn().mockImplementation(() => ({
           downloadPath: ".",
-          artifactName: "release-message-information.config",
+          artifactName: "release-message-information",
         })),
         downloadAllArtifacts: jest.fn(),
+        listArtifacts: jest.fn(),
+        deleteArtifact: jest.fn(),
       } as ArtifactClient;
 
-      mockedArtifact.create.mockImplementation(() => fakeArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "uploadArtifact")
+        .mockImplementation(fakeArtifact.uploadArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "getArtifact")
+        .mockImplementation(fakeArtifact.getArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "downloadArtifact")
+        .mockImplementation(fakeArtifact.downloadArtifact);
 
       return fakeArtifact;
     },
     cleanUp: () => {
       mockedCore.getInput.mockClear();
       mockedCore.exportVariable.mockClear();
-      mockedArtifact.create.mockClear();
+      // DefaultArtifactClient.mockClear();
+      jest.restoreAllMocks();
       try {
-        fs.unlinkSync("release-message-information.config");
+        fs.unlinkSync("release-message-information");
       } catch (e) {}
     },
   };
