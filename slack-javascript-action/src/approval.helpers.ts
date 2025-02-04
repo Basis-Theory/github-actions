@@ -45,13 +45,15 @@ const approvalWasGranted = async (
     const artifactClient = new DefaultArtifactClient();
     const { artifact } = await artifactClient.getArtifact(FILE_NAME);
     if (artifact) {
-      const { downloadPath } = await artifactClient.downloadArtifact(artifact.id)
+      const { downloadPath } = await artifactClient.downloadArtifact(
+        artifact.id
+      );
 
       const fileLocation = `${downloadPath}/${FILE_NAME}`;
       const content = fs.readFileSync(fileLocation, {
         encoding: "utf8",
       });
-      fs.unlink(fileLocation, () => { });
+      fs.unlink(fileLocation, () => {});
       const { message_id, channel } = JSON.parse(content);
 
       let message;

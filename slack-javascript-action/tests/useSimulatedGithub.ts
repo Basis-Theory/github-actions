@@ -80,7 +80,7 @@ const useSimulatedGithub = (
             artifact: {
               id: "1234567890",
             },
-          }
+          };
           return mockedArtifact;
         }),
         getArtifact: jest.fn().mockImplementation(() => ({
@@ -92,12 +92,18 @@ const useSimulatedGithub = (
         })),
         downloadAllArtifacts: jest.fn(),
         listArtifacts: jest.fn(),
-        deleteArtifact: jest.fn()
+        deleteArtifact: jest.fn(),
       } as ArtifactClient;
 
-      jest.spyOn(DefaultArtifactClient.prototype, 'uploadArtifact').mockImplementation(fakeArtifact.uploadArtifact);
-      jest.spyOn(DefaultArtifactClient.prototype, 'getArtifact').mockImplementation(fakeArtifact.getArtifact);
-      jest.spyOn(DefaultArtifactClient.prototype, 'downloadArtifact').mockImplementation(fakeArtifact.downloadArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "uploadArtifact")
+        .mockImplementation(fakeArtifact.uploadArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "getArtifact")
+        .mockImplementation(fakeArtifact.getArtifact);
+      jest
+        .spyOn(DefaultArtifactClient.prototype, "downloadArtifact")
+        .mockImplementation(fakeArtifact.downloadArtifact);
 
       return fakeArtifact;
     },
@@ -108,7 +114,7 @@ const useSimulatedGithub = (
       jest.restoreAllMocks();
       try {
         fs.unlinkSync("release-message-information.config");
-      } catch (e) { }
+      } catch (e) {}
     },
   };
 };
