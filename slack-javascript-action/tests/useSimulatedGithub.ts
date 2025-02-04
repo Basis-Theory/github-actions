@@ -113,8 +113,8 @@ const useSimulatedGithub = (
       // DefaultArtifactClient.mockClear();
       jest.restoreAllMocks();
       try {
-        fs.unlinkSync("release-message-information.config");
-      } catch (e) {}
+        fs.unlinkSync("release-message-information");
+      } catch (e) { }
     },
   };
 };
