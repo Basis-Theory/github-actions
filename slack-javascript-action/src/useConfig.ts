@@ -63,7 +63,7 @@ const getReleaseNotes = (githubContext: GithubContextType): string => {
 
 const getAuthor = (githubContext: GithubContextType): string =>
   githubContext.event.release &&
-    !githubContext.event.release.author.login.includes("github-actions")
+  !githubContext.event.release.author.login.includes("github-actions")
     ? githubContext.event.release.author.login
     : githubContext.actor;
 
@@ -94,21 +94,21 @@ const getStartedTimestamp = (): string => {
 const getStoppedTimestamp = (): string => getDateTime();
 
 const authorMapping: Record<string, string> = {
-  "drewsue": "DREWSUE_TESTING", // leave for tests
-  "luvi": "LUVI_TEST", // leave for tests
-  "armsteadj1": "U01GRDZ7XJ6",
-  "dhudec": "U029GBW14P3",
-  "brigonzalez": "U01Q14S62GN",
-  "lcschy": "U026LV447FG",
-  "jleon15": "U02N976BDB6",
-  "kevinperaza": "U046MNLFEUW",
+  drewsue: "DREWSUE_TESTING", // leave for tests
+  luvi: "LUVI_TEST", // leave for tests
+  armsteadj1: "U01GRDZ7XJ6",
+  dhudec: "U029GBW14P3",
+  brigonzalez: "U01Q14S62GN",
+  lcschy: "U026LV447FG",
+  jleon15: "U02N976BDB6",
+  kevinperaza: "U046MNLFEUW",
   "washluis-alencar": "U0846MDH1L2",
-  "jorgevasquezang": "U0835U3DAGM",
-  "bsterne": "U07A7RRG0G5",
-  "djejaquino": "U01KFJLKV0F",
-  "adrielfsc": "U07CS49GKJM",
-  "mstrisoline": "U01PT4W3RM5",
-  "greathouse": "U06NM3NG477"
+  jorgevasquezang: "U0835U3DAGM",
+  bsterne: "U07A7RRG0G5",
+  djejaquino: "U01KFJLKV0F",
+  adrielfsc: "U07CS49GKJM",
+  mstrisoline: "U01PT4W3RM5",
+  greathouse: "U06NM3NG477",
 };
 
 const useConfig = (): ConfigType => {
