@@ -46,7 +46,7 @@ const getApprovalMessage = (
   completed: boolean = false,
   cancelled: boolean = false
 ): any => {
-  let header_text = cancelled ? "*FAILED* " : "";
+  let header_text = cancelled ? "*Cancelled* " : "";
   header_text += `${completed ? ":approved: ~" : ""}*Approval Requested`;
   header_text += mention_person ? ` from <${mention_person}>*` : "*";
   header_text += completed ? `~` : "";
@@ -63,11 +63,9 @@ const getApprovalMessage = (
       type: "context",
       elements: [
         {
-          text: `${
-            completed ? "~" : ""
-          }:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${
-            completed ? "~" : ""
-          }`,
+          text: `${completed ? "~" : ""
+            }:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${completed ? "~" : ""
+            }`,
           type: "mrkdwn",
         },
       ],
@@ -169,8 +167,8 @@ const getDraftReleaseCollabs = (release_notes: string): any => {
   return `${mentions}`;
 };
 
-const getFailedMention = ({ mention_person }: ConfigType): any => {
-  const mention = mention_person ? mention_person : "!subteam^S03SRBLDYBZ";
+const getFailedMention = ({ slack_user_id }: ConfigType): any => {
+  const mention = slack_user_id ? `@${slack_user_id}` : "!subteam^S03SRBLDYBZ";
   return [
     {
       type: "section",
@@ -194,51 +192,50 @@ const getDeployMessage = (
     stoppedTimestamp,
   }: ConfigType
 ): any => [
-  {
-    type: "header",
-    text: {
-      type: "plain_text",
-      text: heading,
+    {
+      type: "header",
+      text: {
+        type: "plain_text",
+        text: heading,
+      },
     },
-  },
-  {
-    type: "context",
-    elements: [
-      {
-        text: `:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}`,
-        type: "mrkdwn",
-      },
-    ],
-  },
-  {
-    type: "context",
-    elements: [
-      {
-        text: `Deploy started \`${startedTimestamp}\` ${
-          status === "done" ? `and finished \`${stoppedTimestamp}\`` : ""
-        }`,
-        type: "mrkdwn",
-      },
-    ],
-  },
-  {
-    type: "actions",
-    elements: [
-      {
-        type: "button",
-        text: {
-          type: "plain_text",
-          text: "Open Action  :github:",
-          emoji: true,
+    {
+      type: "context",
+      elements: [
+        {
+          text: `:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}`,
+          type: "mrkdwn",
         },
-        url: action_url,
-      },
-    ],
-  },
-  {
-    type: "divider",
-  },
-];
+      ],
+    },
+    {
+      type: "context",
+      elements: [
+        {
+          text: `Deploy started \`${startedTimestamp}\` ${status === "done" ? `and finished \`${stoppedTimestamp}\`` : ""
+            }`,
+          type: "mrkdwn",
+        },
+      ],
+    },
+    {
+      type: "actions",
+      elements: [
+        {
+          type: "button",
+          text: {
+            type: "plain_text",
+            text: "Open Action  :github:",
+            emoji: true,
+          },
+          url: action_url,
+        },
+      ],
+    },
+    {
+      type: "divider",
+    },
+  ];
 
 const useBlocks = () => ({
   releaseNotesToBlocks,

@@ -888,7 +888,7 @@ exports[`failed build send new message when none exists 1`] = `
 
 exports[`failed build send new message when none exists 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"<drewsue>"}}],"text":"","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"<@LUVI_TEST>"}}],"text":"","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
