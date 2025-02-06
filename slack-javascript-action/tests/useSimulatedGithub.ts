@@ -116,7 +116,7 @@ const useSimulatedGithub = (
       jest.restoreAllMocks();
       try {
         fs.unlinkSync("release-message-information");
-      } catch (e) { }
+      } catch (e) {}
     },
   };
 };
