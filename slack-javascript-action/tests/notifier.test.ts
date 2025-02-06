@@ -20,6 +20,7 @@ const { mockCreateMessage, mockUpdateMessage } = useSlackMock(
 beforeEach(() => {
   jest.useFakeTimers();
   jest.setSystemTime(new Date(2020, 3, 1, 0, 0, 0, 0));
+  process.env.GITHUB_REPOSITORY = "luvi/test-repo";
 
   mockCreateMessage();
   mockUpdateMessage();
@@ -27,6 +28,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  delete process.env.GITHUB_REPOSITORY;
   jest.useRealTimers();
   cleanUp();
 });
