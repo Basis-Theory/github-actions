@@ -3,6 +3,7 @@ const core = require("@actions/core"); // For managing action inputs/outputs
 
 export async function getJobStatuses() {
   const token = process.env.GITHUB_TOKEN; // Automatically passed to your action
+  console.log("token exists", token !== undefined);
   const octokit = github.getOctokit(token);
 
   const { owner, repo } = github.context.repo;
