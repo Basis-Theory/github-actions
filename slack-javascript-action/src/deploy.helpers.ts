@@ -37,9 +37,11 @@ const alertDeployDone = async (config: ConfigType) => {
     message = await sendMessage(config.channel, deployMessage);
   }
 
-  if (job_status === "failure") {
+  if (job_status === "cancelled") {
     await approvalWasGrantedOrRejected(config, undefined, true);
+  }
 
+  if (job_status === "failure") {
     await sendMessage(
       config.channel,
       useBlocks().getFailedMention(config),

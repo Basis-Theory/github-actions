@@ -1,5 +1,8 @@
 import useConfig from "./useConfig";
-import { approvalWasGrantedOrRejected, askForApproval } from "./approval.helpers";
+import {
+  approvalWasGrantedOrRejected,
+  askForApproval,
+} from "./approval.helpers";
 import {
   alertDeployDone,
   alertDeployStarting,
@@ -23,7 +26,10 @@ export const deploy_notifier = async () => {
         ...config,
         message_id: message.ts,
       });
-      const approvalGranted = await approvalWasGrantedOrRejected(config, message);
+      const approvalGranted = await approvalWasGrantedOrRejected(
+        config,
+        message
+      );
 
       return { message, releaseNotes, approvalGranted };
     }

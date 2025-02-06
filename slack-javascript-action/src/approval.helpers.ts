@@ -48,7 +48,7 @@ const approvalWasGrantedOrRejected = async (
       const content = fs.readFileSync(fileLocation, {
         encoding: "utf8",
       });
-      fs.unlink(fileLocation, () => { });
+      fs.unlink(fileLocation, () => {});
       const { message_id, channel } = JSON.parse(content);
 
       const messageBlocks = useBlocks().getApprovalMessage(
