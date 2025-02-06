@@ -31,16 +31,11 @@ const askForApproval = async (config: ConfigType) => {
   return message.ts;
 };
 
-const approvalWasGranted = async (
+const approvalWasGrantedOrRejected = async (
   config: ConfigType,
-  release_message: SlackMessage
+  release_message?: SlackMessage,
+  cancelled: boolean = false
 ): Promise<string | undefined> => {
-  const messageBlocks = useBlocks().getApprovalMessage(
-    config,
-    release_message,
-    true
-  );
-
   try {
     const artifactClient = new DefaultArtifactClient();
     const { artifact } = await artifactClient.getArtifact(FILE_NAME);
@@ -53,8 +48,15 @@ const approvalWasGranted = async (
       const content = fs.readFileSync(fileLocation, {
         encoding: "utf8",
       });
-      fs.unlink(fileLocation, () => {});
+      fs.unlink(fileLocation, () => { });
       const { message_id, channel } = JSON.parse(content);
+
+      const messageBlocks = useBlocks().getApprovalMessage(
+        config,
+        release_message || { ts: message_id, channel },
+        true,
+        cancelled
+      );
 
       let message;
       if (message_id) {
@@ -70,4 +72,4 @@ const approvalWasGranted = async (
   return undefined;
 };
 
-export { askForApproval, approvalWasGranted };
+export { askForApproval, approvalWasGrantedOrRejected };

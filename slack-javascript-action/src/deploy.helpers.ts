@@ -2,7 +2,7 @@ import { sendMessage, updateMessage } from "./slack.client";
 import * as core from "@actions/core";
 import useBlocks from "./useBlocks";
 import { ConfigType } from "./useConfig";
-
+import { approvalWasGrantedOrRejected } from "./approval.helpers";
 const alertDeployStarting = async (config: ConfigType) => {
   const message = await sendMessage(
     config.channel,
@@ -38,6 +38,8 @@ const alertDeployDone = async (config: ConfigType) => {
   }
 
   if (job_status === "failure") {
+    await approvalWasGrantedOrRejected(config, undefined, true);
+
     await sendMessage(
       config.channel,
       useBlocks().getFailedMention(config),
