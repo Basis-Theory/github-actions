@@ -3,7 +3,7 @@ import * as core from "@actions/core";
 import useBlocks from "./useBlocks";
 import { ConfigType } from "./useConfig";
 import { approvalWasGrantedOrRejected } from "./approval.helpers";
-import { getJobStatuses } from "./github.helpers";
+import { getJobStatuses, readAndLogFiles } from "./github.helpers";
 const alertDeployStarting = async (config: ConfigType) => {
   const message = await sendMessage(
     config.channel,
@@ -37,8 +37,7 @@ const alertDeployDone = async (config: ConfigType) => {
   } else {
     message = await sendMessage(config.channel, deployMessage);
   }
-
-  getJobStatuses();
+  readAndLogFiles(config.files?.filter((file): file is string => file !== undefined));
   if (job_status === "cancelled") {
     await approvalWasGrantedOrRejected(config, undefined, true);
   }
