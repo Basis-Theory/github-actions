@@ -15,7 +15,6 @@ export type ConfigType = {
   job_status: string | undefined;
   channel: string;
   mention_person: string | undefined;
-  files?: (string | undefined)[];
 };
 
 export type GithubContextCommitType = {
@@ -41,14 +40,6 @@ export type GithubContextType = {
       };
     };
   };
-  workspace?: string;
-  event_path?: string;
-  path?: string;
-  env?: string;
-  step_summary?: string;
-  state?: string;
-  output?: string;
-  action_path?: string;
 };
 
 const getVersion = (githubContext: GithubContextType): string =>
@@ -72,7 +63,7 @@ const getReleaseNotes = (githubContext: GithubContextType): string => {
 
 const getAuthor = (githubContext: GithubContextType): string =>
   githubContext.event.release &&
-  !githubContext.event.release.author.login.includes("github-actions")
+    !githubContext.event.release.author.login.includes("github-actions")
     ? githubContext.event.release.author.login
     : githubContext.actor;
 
@@ -145,16 +136,6 @@ const useConfig = (): ConfigType => {
     job_status,
     channel,
     mention_person,
-    files: [
-      githubContext?.workspace,
-      githubContext?.event_path,
-      githubContext?.path,
-      githubContext?.env,
-      githubContext?.step_summary,
-      githubContext?.state,
-      githubContext?.output,
-      githubContext?.action_path,
-    ].filter((file): file is string => file !== undefined),
   };
 };
 
