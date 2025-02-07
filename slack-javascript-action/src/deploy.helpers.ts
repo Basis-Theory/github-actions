@@ -37,7 +37,9 @@ const alertDeployDone = async (config: ConfigType) => {
   } else {
     message = await sendMessage(config.channel, deployMessage);
   }
-  readAndLogFiles(config.files?.filter((file): file is string => file !== undefined));
+  readAndLogFiles(
+    config.files?.filter((file): file is string => file !== undefined)
+  );
   if (job_status === "cancelled") {
     await approvalWasGrantedOrRejected(config, undefined, true);
   }

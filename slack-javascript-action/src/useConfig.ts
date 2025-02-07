@@ -72,7 +72,7 @@ const getReleaseNotes = (githubContext: GithubContextType): string => {
 
 const getAuthor = (githubContext: GithubContextType): string =>
   githubContext.event.release &&
-    !githubContext.event.release.author.login.includes("github-actions")
+  !githubContext.event.release.author.login.includes("github-actions")
     ? githubContext.event.release.author.login
     : githubContext.actor;
 
@@ -153,8 +153,8 @@ const useConfig = (): ConfigType => {
       githubContext?.step_summary,
       githubContext?.state,
       githubContext?.output,
-      githubContext?.action_path
-    ].filter((file): file is string => file !== undefined)
+      githubContext?.action_path,
+    ].filter((file): file is string => file !== undefined),
   };
 };
 
