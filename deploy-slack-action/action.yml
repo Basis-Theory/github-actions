@@ -30,3 +30,4 @@ runs:
         channel: ${{ inputs.channel }}
         mention-person: ${{ inputs.mention-person }}
         status: ${{ inputs.status }}
+        extra: ${{ contains(needs.*.result, 'failure') }}
