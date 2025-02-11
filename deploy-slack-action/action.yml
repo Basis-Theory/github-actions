@@ -23,7 +23,7 @@ runs:
       run: |
         echo "job_status=${{ inputs.job-status || job.status }}" >> $GITHUB_ENV
     - name: Notify
-      uses: Basis-Theory/github-actions/helper-slack-action@feat/better-messages
+      uses: Basis-Theory/github-actions/helper-slack-action@master
       with:
         github: ${{ toJSON(github) }}
         slack-api-token: ${{ inputs.slack-api-token }}
