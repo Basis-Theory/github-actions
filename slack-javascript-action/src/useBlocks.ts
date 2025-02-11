@@ -1,5 +1,6 @@
 import { ConfigType } from "./useConfig";
 import { SlackMessage } from "./slack.client";
+import { COMPLETED_STATUSES } from "./github.helpers";
 
 const releaseNotesToBlocks = (release_notes: string): any => {
   const fullChangelogRegex = /Full Changelog.*/i;
@@ -63,11 +64,9 @@ const getApprovalMessage = (
       type: "context",
       elements: [
         {
-          text: `${
-            completed ? "~" : ""
-          }:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${
-            completed ? "~" : ""
-          }`,
+          text: `${completed ? "~" : ""
+            }:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}${completed ? "~" : ""
+            }`,
           type: "mrkdwn",
         },
       ],
@@ -194,51 +193,50 @@ const getDeployMessage = (
     stoppedTimestamp,
   }: ConfigType
 ): any => [
-  {
-    type: "header",
-    text: {
-      type: "plain_text",
-      text: heading,
+    {
+      type: "header",
+      text: {
+        type: "plain_text",
+        text: heading,
+      },
     },
-  },
-  {
-    type: "context",
-    elements: [
-      {
-        text: `:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}`,
-        type: "mrkdwn",
-      },
-    ],
-  },
-  {
-    type: "context",
-    elements: [
-      {
-        text: `Deploy started \`${startedTimestamp}\` ${
-          status === "done" ? `and finished \`${stoppedTimestamp}\`` : ""
-        }`,
-        type: "mrkdwn",
-      },
-    ],
-  },
-  {
-    type: "actions",
-    elements: [
-      {
-        type: "button",
-        text: {
-          type: "plain_text",
-          text: "Open Action  :github:",
-          emoji: true,
+    {
+      type: "context",
+      elements: [
+        {
+          text: `:git: \`${repository}\` @ \`${version}\`  | :technologist: ${author}`,
+          type: "mrkdwn",
         },
-        url: action_url,
-      },
-    ],
-  },
-  {
-    type: "divider",
-  },
-];
+      ],
+    },
+    {
+      type: "context",
+      elements: [
+        {
+          text: `Deploy started \`${startedTimestamp}\` ${COMPLETED_STATUSES.includes(status) ? `and finished \`${stoppedTimestamp}\`` : ""
+            }`,
+          type: "mrkdwn",
+        },
+      ],
+    },
+    {
+      type: "actions",
+      elements: [
+        {
+          type: "button",
+          text: {
+            type: "plain_text",
+            text: "Open Action  :github:",
+            emoji: true,
+          },
+          url: action_url,
+        },
+      ],
+    },
+    {
+      type: "divider",
+    },
+  ];
 
 const useBlocks = () => ({
   releaseNotesToBlocks,

@@ -10,7 +10,7 @@ inputs:
   mention-person:
     description: "User to mention in message"
   status:
-    description: 'Status of the deployment [start, done, request]'
+    description: 'Status of the deployment [start, done, request, success, cancelled, failure]'
     default: 'start'
   job-status:
     description: 'Status of the GitHub Actions job'
@@ -30,4 +30,3 @@ runs:
         channel: ${{ inputs.channel }}
         mention-person: ${{ inputs.mention-person }}
         status: ${{ inputs.status }}
-        extra: ${{ contains(needs.*.result, 'failure') }}
