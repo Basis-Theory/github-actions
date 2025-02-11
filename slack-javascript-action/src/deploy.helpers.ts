@@ -17,12 +17,18 @@ const alertDeployStarting = async (config: ConfigType) => {
 };
 
 const getDoneHeading = ({ job_status, status }: ConfigType) => {
-  if (job_status === "success" || SUCCESS_STATUSES.includes(status)) {
+  if (
+    (job_status === "success" || SUCCESS_STATUSES.includes(status)) &&
+    !([...CANCELLED_STATUSES, ...FAILURE_STATUSES].includes(status))
+  ) {
     return `:white_check_mark: Deploy Success`;
-  } else if (job_status === "failure" || FAILURE_STATUSES.includes(status)) {
-    return `:no_entry_sign: Deploy Failure`;
   } else if (CANCELLED_STATUSES.includes(status)) {
     return `:octagonal_sign: Deploy Cancelled`;
+  } else if (
+    job_status === "failure" ||
+    FAILURE_STATUSES.includes(status)
+  ) {
+    return `:no_entry_sign: Deploy Failure`;
   }
   return `:shrug: Deploy Status Unknown`;
 };
