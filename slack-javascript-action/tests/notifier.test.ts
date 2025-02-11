@@ -20,6 +20,7 @@ const { mockCreateMessage, mockUpdateMessage } = useSlackMock(
 beforeEach(() => {
   jest.useFakeTimers();
   jest.setSystemTime(new Date(2020, 3, 1, 0, 0, 0, 0));
+  process.env.GITHUB_REPOSITORY = "luvi/test-repo";
 
   mockCreateMessage();
   mockUpdateMessage();
@@ -27,6 +28,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  delete process.env.GITHUB_REPOSITORY;
   jest.useRealTimers();
   cleanUp();
 });
@@ -48,7 +50,7 @@ const deploySuccessful = async () => {
 };
 
 const deployCancelled = async () => {
-  mockGetInput({ status: "done" });
+  mockGetInput({ status: "cancelled" });
   setJobStatus("cancelled");
   return await deploy_notifier();
 };
@@ -56,6 +58,21 @@ const deployCancelled = async () => {
 const deployFailed = async () => {
   mockGetInput({ status: "done" });
   setJobStatus("failure");
+  return await deploy_notifier();
+};
+
+const deployFailedWithStatus = async () => {
+  mockGetInput({ status: "failure" });
+  return await deploy_notifier();
+};
+
+const deployCancelledWithStatus = async () => {
+  mockGetInput({ status: "cancelled" });
+  return await deploy_notifier();
+};
+
+const deploySuccessfulWithStatus = async () => {
+  mockGetInput({ status: "success" });
   return await deploy_notifier();
 };
 
@@ -90,6 +107,12 @@ describe("build success", () => {
     expect(await deploySuccessful()).toMatchSnapshot();
   });
 
+  test("happy path request, start, successStatus", async () => {
+    await requestDeploy("request_channel123");
+    await startDeploy();
+    expect(await deploySuccessfulWithStatus()).toMatchSnapshot();
+  });
+
   test("send new message if nothing to update on finish", async () => {
     expect(await deploySuccessful()).toMatchSnapshot();
   });
@@ -106,10 +129,21 @@ describe("build cancelled", () => {
 
     expect(await deployCancelled()).toMatchSnapshot();
   });
+
+  test("happy path request, start, cancelledStatus", async () => {
+    await requestDeploy();
+    await startDeploy();
+
+    expect(await deployCancelledWithStatus()).toMatchSnapshot();
+  });
 });
 
 describe("failed build", () => {
   test("send new message when none exists", async () => {
     expect(await deployFailed()).toMatchSnapshot();
+  });
+
+  test("works with status", async () => {
+    expect(await deployFailedWithStatus()).toMatchSnapshot();
   });
 });

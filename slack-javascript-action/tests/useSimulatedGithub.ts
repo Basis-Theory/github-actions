@@ -9,6 +9,7 @@ import fs from "fs";
 afterEach(() => {
   delete process.env.SLACK_MESSAGE_ID;
   delete process.env.job_status;
+  delete process.env.GITHUB_REPOSITORY;
   mockedEnvs.forEach((name) => delete process.env[name]);
   jest.useRealTimers();
 });
@@ -57,6 +58,7 @@ const useSimulatedGithub = (
   mockedCore: jest.Mocked<typeof core>,
   mockedArtifact: jest.Mocked<typeof artifact>
 ) => {
+  process.env.GITHUB_REPOSITORY = "luvi/test-repo";
   return {
     setJobStatus,
     mockGetInput: (updateCoreData: any) => {

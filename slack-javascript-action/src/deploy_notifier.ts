@@ -1,11 +1,15 @@
 import useConfig from "./useConfig";
-import { approvalWasGranted, askForApproval } from "./approval.helpers";
+import {
+  approvalWasGrantedOrRejected,
+  askForApproval,
+} from "./approval.helpers";
 import {
   alertDeployDone,
   alertDeployStarting,
   threadReleaseNotes,
 } from "./deploy.helpers";
 import { draftReleaseIsReady } from "./draft_release_ready.helpers";
+import { COMPLETED_STATUSES } from "./github.helpers";
 
 export const deploy_notifier = async () => {
   const config = useConfig();
@@ -15,7 +19,10 @@ export const deploy_notifier = async () => {
   } else {
     if (config.status === "request") {
       return await askForApproval(config);
-    } else if (config.status === "done" || config.message_id) {
+    } else if (
+      COMPLETED_STATUSES.includes(config.status) ||
+      config.message_id
+    ) {
       return await alertDeployDone(config);
     } else {
       const message = await alertDeployStarting(config);
@@ -23,7 +30,10 @@ export const deploy_notifier = async () => {
         ...config,
         message_id: message.ts,
       });
-      const approvalGranted = await approvalWasGranted(config, message);
+      const approvalGranted = await approvalWasGrantedOrRejected(
+        config,
+        message
+      );
 
       return { message, releaseNotes, approvalGranted };
     }

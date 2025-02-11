@@ -206,6 +206,212 @@ exports[`build cancelled happy path request, start, cancelled 6`] = `
 
 exports[`build cancelled happy path request, start, cancelled 7`] = `"updated message id"`;
 
+exports[`build cancelled happy path request, start, cancelledStatus 1`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"*Approval Requested from <drewsue>*"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 2`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 3`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":rocket: Deploy Started"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` ","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 4`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 5`] = `
+{
+  "data": "{"channel":"C1234567890","ts":"created message id","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":approved: ~*Approval Requested from <drewsue>*~"}},{"type":"context","elements":[{"text":"~:git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi~","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Deploy :slack:","emoji":true},"url":"https://basistheory.slack.com/archives/undefined/created message id"}]},{"type":"divider"}],"text":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.update",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 6`] = `
+{
+  "data": "{"channel":"C1234567890","ts":"created message id","blocks":[{"type":"header","text":{"type":"plain_text","text":":octagonal_sign: Deploy Cancelled"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.update",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build cancelled happy path request, start, cancelledStatus 7`] = `"updated message id"`;
+
 exports[`build cancelled send new message cancelled message if nothing to update on finish 1`] = `
 {
   "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":octagonal_sign: Deploy Cancelled"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
@@ -447,6 +653,212 @@ exports[`build success happy path request, start, success 6`] = `
 `;
 
 exports[`build success happy path request, start, success 7`] = `"updated message id"`;
+
+exports[`build success happy path request, start, successStatus 1`] = `
+{
+  "data": "{"channel":"request_channel123","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"*Approval Requested from <drewsue>*"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 2`] = `
+{
+  "data": "{"channel":"request_channel123","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 3`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":rocket: Deploy Started"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` ","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 4`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":" :loud_sound: *Release Notes* :loud_sound:"}},{"type":"section","text":{"type":"mrkdwn","text":"• @drewsue notes!"}}],"text":"@drewsue notes!","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 5`] = `
+{
+  "data": "{"channel":"request_channel123","ts":"created message id","blocks":[{"type":"section","text":{"type":"mrkdwn","text":":approved: ~*Approval Requested from <drewsue>*~"}},{"type":"context","elements":[{"text":"~:git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi~","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Deploy :slack:","emoji":true},"url":"https://basistheory.slack.com/archives/undefined/created message id"}]},{"type":"divider"}],"text":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.update",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 6`] = `
+{
+  "data": "{"channel":"C1234567890","ts":"created message id","blocks":[{"type":"header","text":{"type":"plain_text","text":":white_check_mark: Deploy Success"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.update",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`build success happy path request, start, successStatus 7`] = `"updated message id"`;
 
 exports[`build success send new message if nothing to update on finish 1`] = `
 {
@@ -888,7 +1300,7 @@ exports[`failed build send new message when none exists 1`] = `
 
 exports[`failed build send new message when none exists 2`] = `
 {
-  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"<drewsue>"}}],"text":"","thread_ts":"created message id"}",
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"<@LUVI_TEST>"}}],"text":"","thread_ts":"created message id"}",
   "env": {
     "Blob": [Function],
     "FormData": [Function],
@@ -921,3 +1333,73 @@ exports[`failed build send new message when none exists 2`] = `
 `;
 
 exports[`failed build send new message when none exists 3`] = `"created message id"`;
+
+exports[`failed build works with status 1`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"header","text":{"type":"plain_text","text":":no_entry_sign: Deploy Failure"}},{"type":"context","elements":[{"text":":git: \`test-repo\` @ \`v42.0.0\`  | :technologist: luvi","type":"mrkdwn"}]},{"type":"context","elements":[{"text":"Deploy started \`03/31/2020, 7:00:00 PM CDT\` and finished \`03/31/2020, 7:00:00 PM CDT\`","type":"mrkdwn"}]},{"type":"actions","elements":[{"type":"button","text":{"type":"plain_text","text":"Open Action  :github:","emoji":true},"url":"http://test-repo.com/testing/actions/runs/12"}]},{"type":"divider"}],"text":"","thread_ts":""}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`failed build works with status 2`] = `
+{
+  "data": "{"channel":"C1234567890","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"<@LUVI_TEST>"}}],"text":"","thread_ts":"created message id"}",
+  "env": {
+    "Blob": [Function],
+    "FormData": [Function],
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Authorization": "Bearer slack api key",
+    "Content-Type": "application/json",
+  },
+  "maxBodyLength": -1,
+  "maxContentLength": -1,
+  "method": "post",
+  "timeout": 0,
+  "transformRequest": [
+    [Function],
+  ],
+  "transformResponse": [
+    [Function],
+  ],
+  "transitional": {
+    "clarifyTimeoutError": false,
+    "forcedJSONParsing": true,
+    "silentJSONParsing": true,
+  },
+  "url": "https://slack.com/api/chat.postMessage",
+  "validateStatus": [Function],
+  "xsrfCookieName": "XSRF-TOKEN",
+  "xsrfHeaderName": "X-XSRF-TOKEN",
+}
+`;
+
+exports[`failed build works with status 3`] = `"created message id"`;

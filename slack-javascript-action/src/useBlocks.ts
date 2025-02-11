@@ -1,5 +1,6 @@
 import { ConfigType } from "./useConfig";
 import { SlackMessage } from "./slack.client";
+import { COMPLETED_STATUSES } from "./github.helpers";
 
 const releaseNotesToBlocks = (release_notes: string): any => {
   const fullChangelogRegex = /Full Changelog.*/i;
@@ -43,9 +44,11 @@ const releaseNotesToBlocks = (release_notes: string): any => {
 const getApprovalMessage = (
   { repository, version, author, action_url, mention_person }: ConfigType,
   release_message: SlackMessage | undefined = undefined,
-  completed: boolean = false
+  completed: boolean = false,
+  cancelled: boolean = false
 ): any => {
-  let header_text = `${completed ? ":approved: ~" : ""}*Approval Requested`;
+  let header_text = cancelled ? "*Cancelled* " : "";
+  header_text += `${completed ? ":approved: ~" : ""}*Approval Requested`;
   header_text += mention_person ? ` from <${mention_person}>*` : "*";
   header_text += completed ? `~` : "";
 
@@ -167,8 +170,8 @@ const getDraftReleaseCollabs = (release_notes: string): any => {
   return `${mentions}`;
 };
 
-const getFailedMention = ({ mention_person }: ConfigType): any => {
-  const mention = mention_person ? mention_person : "!subteam^S03SRBLDYBZ";
+const getFailedMention = ({ slack_user_id }: ConfigType): any => {
+  const mention = slack_user_id ? `@${slack_user_id}` : "!subteam^S03SRBLDYBZ";
   return [
     {
       type: "section",
@@ -213,7 +216,9 @@ const getDeployMessage = (
     elements: [
       {
         text: `Deploy started \`${startedTimestamp}\` ${
-          status === "done" ? `and finished \`${stoppedTimestamp}\`` : ""
+          COMPLETED_STATUSES.includes(status)
+            ? `and finished \`${stoppedTimestamp}\``
+            : ""
         }`,
         type: "mrkdwn",
       },
