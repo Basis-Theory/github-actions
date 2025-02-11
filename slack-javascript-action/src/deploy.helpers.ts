@@ -41,7 +41,10 @@ const alertDeployDone = async (config: ConfigType) => {
     message = await sendMessage(config.channel, deployMessage);
   }
 
-  if (CANCELLED_STATUSES.includes(config.status) || job_status === "cancelled") {
+  if (
+    CANCELLED_STATUSES.includes(config.status) ||
+    job_status === "cancelled"
+  ) {
     await approvalWasGrantedOrRejected(config, undefined, true);
   }
 

@@ -19,7 +19,10 @@ export const deploy_notifier = async () => {
   } else {
     if (config.status === "request") {
       return await askForApproval(config);
-    } else if (COMPLETED_STATUSES.includes(config.status) || config.message_id) {
+    } else if (
+      COMPLETED_STATUSES.includes(config.status) ||
+      config.message_id
+    ) {
       return await alertDeployDone(config);
     } else {
       const message = await alertDeployStarting(config);

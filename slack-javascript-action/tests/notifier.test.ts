@@ -130,7 +130,6 @@ describe("build cancelled", () => {
     expect(await deployCancelled()).toMatchSnapshot();
   });
 
-
   test("happy path request, start, cancelledStatus", async () => {
     await requestDeploy();
     await startDeploy();
